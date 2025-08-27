@@ -1,0 +1,54 @@
+#include <msp430xG46x.h>     ; define controlled include file
+          ORG 1100h
+yotamid   DW    0,9,2,7,3,7,0,5
+zivid     DW    0,8,6,6,0,3,6,5 
+MaxOdd    DS16  8
+IDsize    DW    9
+
+          RSEG   CSTACK
+          RSEG   CODE                        ; ORG   0x3100 - place program in 'CODE' segment in to Flash memory
+
+Main      MOV #SFE(CSTACK),SP             ;seting the STACK to the start of the FLASH memory
+          PUSH IDsize    ;10
+          PUSH #yotamid ;8
+          PUSH #zivid   ;6
+          push #MaxOdd  ;4
+          PUSH #0     ;2
+          CALL #func
+L         NOP
+          JMP L                            ; to remove warnings
+
+func      MOV 6(SP),R4  ;zivid
+          MOV 8(SP),R5  ;yotamid
+          MOV 10(SP),R6  ;IDsize
+          MOV 4(SP),R7   ;MaxOdd
+          DECD R4         ;so that we can INCD inside the Func
+          DECD R5
+          DECD R7
+Loop      DEC R6        ;Counter
+          JZ  L1        
+          INCD R4
+          INCD R5
+          INCD R7
+          BIT #0x01,0(R4)     ;checking if zivid[i] is even
+          JNZ ODDZIV
+          BIT #0x01,0(R5)     ;zivid[i] is even, checking if yotamid[i] is even
+          JNZ PUSHyot
+          MOV #0x0,0(R7)      ;both id[i]s are even, placing #0 to MaxOdd[i]
+          JMP Loop
+ODDZIV    BIT #0x01,0(R5)     ;zivid[i] is Odd, checking if yotamid[i] is even
+          JNZ cOMP
+PUSHz     MOV @R4,0(R7)       ;zivid[i] is Odd, yotamid[i] is even, placing zivid[i] to MaxOdd[i]
+          JMP Loop
+cOMP      CMP @R4,0(R5)       ;both id[i]s are odd, comparing who is bigger and placing him to MaxOdd[i]
+          JN  PUSHz
+PUSHyot   MOV @R5,0(R7)       ;placing yotamid[i] to MaxOdd[i]: either both id[i]s are odd and yotamid[i] is bigger, or zivid[i] is even and yotamid[i] is odd
+          JMP Loop
+L1        RET
+
+;-------------------------------------------------------------------------------
+          COMMON  INTVEC                  ; Interrupt Vectors
+;-------------------------------------------------------------------------------
+          ORG     RESET_VECTOR            ; POR, ext. Reset
+          DW      Main
+          END

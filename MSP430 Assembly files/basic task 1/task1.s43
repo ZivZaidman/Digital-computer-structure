@@ -1,0 +1,30 @@
+#include <msp430xG46x.h>     ; define controlled include file
+
+          ORG 1100h
+arr   DW 1,2,3,4,5,6,7,8,9,10
+size  DW 10
+avg   DS16 1
+
+      RSEG CSTACK
+      RSEG CODE
+      
+Main  MOV 0x3100,SP
+      MOV #arr,R5
+      MOV size,R6
+      CALL #Func
+L1    JMP L1
+d
+Func  CLR R7
+L2    ADD @R5+,R7
+      DEC R6
+      JNZ L2
+      RRA R7
+      MOV R7, avg
+      RET
+                                          ; to remove warnings
+;-------------------------------------------------------------------------------
+          COMMON  INTVEC                  ; Interrupt Vectors
+;-------------------------------------------------------------------------------
+          ORG     RESET_VECTOR            ; POR, ext. Reset
+          DW      Main
+          END
