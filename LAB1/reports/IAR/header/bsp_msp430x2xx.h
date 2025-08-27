@@ -1,0 +1,53 @@
+#ifndef _bsp_H_
+#define _bsp_H_
+
+
+#include  <msp430g2553.h>          // MSP430x2xx
+// #include  <msp430xG46x.h>  // MSP430x4xx
+
+
+#define   debounceVal      30000
+#define   LEDs_SHOW_RATE   0xFFFF  // 62_5ms
+
+// LEDs abstraction
+#define LEDsArrPort        P1OUT
+#define LEDsArrPortDir     P1DIR
+#define LEDsArrPortSel     P1SEL
+
+// Switches abstraction
+#define SWsArrPort         P2IN
+#define SWsArrPortDir      P2DIR
+#define SWsArrPortSel      P2SEL
+#define SWmask             0x0F
+
+//RGBdefinition
+#define RGBArrPort         P2OUT
+#define RGBArrPortsel      P2SEL
+#define RGBArrPortDir      P2DIR
+
+// PushButtons abstraction
+#define PBsArrPort     P2IN
+#define PBsArrIntPend      P2IFG
+#define PBsArrIntEn    P2IE
+#define PBsArrIntEdgeSel   P2IES
+#define PBsArrPortSel      P2SEL
+#define PBsArrPortDir      P2DIR
+#define PB0                0x01
+#define PB1                0x02
+#define PB2                0x04
+#define PB3                0x08
+
+#define PWMOutput          P2OUT
+#define PWMOutputsel       P2SEL
+#define PWMOutputDir       P2DIR
+#define HighDelay          18
+#define LowDelay                3
+
+extern void GPIOconfig(void);
+extern void TIMERconfig(void);
+extern void ADCconfig(void);
+
+#endif
+
+
+

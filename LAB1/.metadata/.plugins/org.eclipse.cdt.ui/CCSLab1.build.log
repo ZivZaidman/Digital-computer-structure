@@ -1,0 +1,48 @@
+
+**** Build of configuration Debug for project CCSLab1 ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../api.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/CCSLab1" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/MSP430G2xx3" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="api.d_raw"  "../api.c"
+
+>> Compilation failure
+subdir_rules.mk:9: recipe for target 'api.obj' failed
+"../api.c", line 1: fatal error #1965: cannot open source file "../header/api.h"
+1 catastrophic error detected in the compilation of "../api.c".
+Compilation terminated.
+gmake: *** [api.obj] Error 1
+'Building file: "../bsp.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/CCSLab1" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/MSP430G2xx3" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="bsp.d_raw"  "../bsp.c"
+
+>> Compilation failure
+subdir_rules.mk:16: recipe for target 'bsp.obj' failed
+"../bsp.c", line 1: fatal error #1965: cannot open source file "../header/bsp.h"
+1 catastrophic error detected in the compilation of "../bsp.c".
+Compilation terminated.
+gmake: *** [bsp.obj] Error 1
+'Building file: "../halGPIO.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/CCSLab1" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/MSP430G2xx3" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="halGPIO.d_raw"  "../halGPIO.c"
+
+>> Compilation failure
+subdir_rules.mk:23: recipe for target 'halGPIO.obj' failed
+"../halGPIO.c", line 1: fatal error #1965: cannot open source file "../header/halGPIO.h"
+1 catastrophic error detected in the compilation of "../halGPIO.c".
+Compilation terminated.
+gmake: *** [halGPIO.obj] Error 1
+'Building file: "../main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/CCSLab1" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/LAB1/MSP430G2xx3" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="main.d_raw"  "../main.c"
+
+>> Compilation failure
+subdir_rules.mk:30: recipe for target 'main.obj' failed
+"../main.c", line 1: fatal error #1965: cannot open source file "../header/api.h"
+1 catastrophic error detected in the compilation of "../main.c".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

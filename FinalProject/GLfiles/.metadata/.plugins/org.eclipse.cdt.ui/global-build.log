@@ -1,0 +1,757 @@
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Sorce/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/main.d_raw" --obj_directory="Sorce"  "../Sorce/main.c"
+
+>> Compilation failure
+Sorce/subdir_rules.mk:9: recipe for target 'Sorce/main.obj' failed
+"../Sorce/main.c", line 1: fatal error #1965: cannot open source file "../header/api.h"
+1 catastrophic error detected in the compilation of "../Sorce/main.c".
+Compilation terminated.
+gmake: *** [Sorce/main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Sorce/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/main.d_raw" --obj_directory="Sorce"  "../Sorce/main.c"
+
+>> Compilation failure
+Sorce/subdir_rules.mk:9: recipe for target 'Sorce/main.obj' failed
+"../Sorce/main.c", line 1: fatal error #1965: cannot open source file "../header/api.h"
+1 catastrophic error detected in the compilation of "../Sorce/main.c".
+Compilation terminated.
+gmake: *** [Sorce/main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Sorce/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/main.d_raw" --obj_directory="Sorce"  "../Sorce/main.c"
+
+>> Compilation failure
+Sorce/subdir_rules.mk:9: recipe for target 'Sorce/main.obj' failed
+"../Sorce/main.c", line 1: fatal error #1965: cannot open source file "../header/api.h"
+1 catastrophic error detected in the compilation of "../Sorce/main.c".
+Compilation terminated.
+gmake: *** [Sorce/main.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Sorce/bsp.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/bsp.d_raw" --obj_directory="Sorce"  "../Sorce/bsp.c"
+"../Sorce/bsp.c", line 73: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+'Finished building: "../Sorce/bsp.c"'
+ 
+'Building file: "../Sorce/flash.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/flash.d_raw" --obj_directory="Sorce"  "../Sorce/flash.c"
+"../Sorce/flash.c", line 14: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Sorce/flash.c", line 22: warning #515-D: a value of type "int *" cannot be assigned to an entity of type "char *"
+"../Sorce/flash.c", line 22: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Sorce/flash.c", line 29: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/flash.c", line 29: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+"../Sorce/flash.c", line 29: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+'Finished building: "../Sorce/flash.c"'
+ 
+'Building file: "../Sorce/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/main.d_raw" --obj_directory="Sorce"  "../Sorce/main.c"
+"../Sorce/main.c", line 31: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Sorce/main.c", line 39: warning #225-D: function "StepperUsingJoyStick" declared implicitly
+"../Sorce/main.c", line 68: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Sorce/main.c", line 8: remark #1535-D: (ULP 8.1) variable "state" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/main.c", line 9: remark #1535-D: (ULP 8.1) variable "stateStepp" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/main.c", line 10: remark #1535-D: (ULP 8.1) variable "lpm_mode" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: "../Sorce/main.c"'
+ 
+'Building file: "../Sorce/api.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/api.d_raw" --obj_directory="Sorce"  "../Sorce/api.c"
+"../Sorce/api.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using ADC10BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../Sorce/api.c", line 26: warning #515-D: a value of type "short (*)[]" cannot be assigned to an entity of type "unsigned int"
+"../Sorce/api.c", line 56: remark #1528-D: (ULP 3.1) Detected flag polling using ADC10BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../Sorce/api.c", line 57: warning #515-D: a value of type "short (*)[]" cannot be assigned to an entity of type "unsigned int"
+"../Sorce/api.c", line 69: warning #225-D: function "strlen" declared implicitly
+"../Sorce/api.c", line 69: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Sorce/api.c", line 91: warning #515-D: a value of type "int *" cannot be assigned to an entity of type "char *"
+"../Sorce/api.c", line 89: warning #552-D: variable "start" was set but never used
+"../Sorce/api.c", line 89: warning #552-D: variable "stop" was set but never used
+"../Sorce/api.c", line 91: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Sorce/api.c", line 216: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/api.c", line 225: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/api.c", line 227: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/api.c", line 242: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/api.c", line 244: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/api.c", line 266: remark #1535-D: (ULP 8.1) variable "speed_clk" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/api.c", line 285: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/api.c", line 300: remark #1535-D: (ULP 8.1) variable "speed_clk" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/api.c", line 318: warning #225-D: function "int2str" declared implicitly
+"../Sorce/api.c", line 344: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/api.c", line 348: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/api.c", line 348: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/api.c", line 351: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/api.c", line 351: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/api.c", line 445: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/api.c", line 446: remark #2553-D: (ULP 14.1) Array index (involving "l") of type "int". Recommend using "unsigned int"
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 203 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 204 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 205 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 206 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 207 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 208 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 210 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 211 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 212 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 213 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 214 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 215 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 216 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 217 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 218 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 220 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 221 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 222 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 224 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 225 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 226 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 228 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 229 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 230 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 232 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 233 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 234 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 235 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 236 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 237 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 243 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 244 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 245 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 246 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 247 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 248 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 257 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 259 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 261 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 265 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 267 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 274 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 276 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 278 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 282 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 284 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 291 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 293 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 295 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 299 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 301 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: "../Sorce/api.c"'
+ 
+'Building file: "../Sorce/halGPIO.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/halGPIO.d_raw" --obj_directory="Sorce"  "../Sorce/halGPIO.c"
+"../Sorce/halGPIO.c", line 85: remark #2553-D: (ULP 14.1) Array index (involving "strSize") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 91: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 96: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 97: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 100: remark #2553-D: (ULP 14.1) Array index (involving "strSize") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 107: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 133: warning #225-D: function "Stepper_clockwise" declared implicitly
+"../Sorce/halGPIO.c", line 155: warning #225-D: function "Stepper_counter_clockwise" declared implicitly
+"../Sorce/halGPIO.c", line 125: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 126: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 131: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 149: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 153: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 170: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 186: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 188: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 189: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 191: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 370: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 374: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 374: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 375: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 408: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../Sorce/halGPIO.c", line 419: remark #1538-D: (ULP 10.1) ISR TimerA_ISR calls function StopAllTimers. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 429: remark #1538-D: (ULP 10.1) ISR Timer1_A0_ISR calls function StopAllTimers. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 473: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 476: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 478: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 480: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 481: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 486: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 488: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 490: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 492: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 493: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 446: remark #1535-D: (ULP 8.1) variable "coeff_1" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 447: remark #1535-D: (ULP 8.1) variable "coeff_1b" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 448: remark #1535-D: (ULP 8.1) variable "coeff_1c" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 449: remark #1535-D: (ULP 8.1) variable "coeff_2" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 553: remark #1538-D: (ULP 10.1) ISR USCI0TX_ISR calls function START_TIMERA0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 566: remark #1538-D: (ULP 10.1) ISR USCI0TX_ISR calls function START_TIMERA0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 601: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Sorce/halGPIO.c", line 608: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Sorce/halGPIO.c", line 615: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Sorce/halGPIO.c", line 581: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 584: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 587: remark #1538-D: (ULP 10.1) ISR USCI0RX_ISR calls function strcpy. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 591: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 592: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 592: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+"../Sorce/halGPIO.c", line 598: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 605: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 612: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 620: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 625: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 630: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 657: remark #1538-D: (ULP 10.1) ISR Joystick_handler calls function delay. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 16: remark #1535-D: (ULP 8.1) variable "delay_time" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 28: remark #1535-D: (ULP 8.1) variable "startRotateLEDs" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 30: remark #1535-D: (ULP 8.1) variable "counter" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+warning: "../Sorce/halGPIO.c", line 348: Assembly statement "NOP" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Sorce/halGPIO.c", line 348: Assembly statement "NOP" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Sorce/halGPIO.c", line 390: Assembly statement "nop" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Sorce/halGPIO.c", line 390: Assembly statement "nop" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+'Finished building: "../Sorce/halGPIO.c"'
+ 
+'Building target: "GuyFiles.out"'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"GuyFiles.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="GuyFiles_linkInfo.xml" --use_hw_mpy=none --rom_model -o "GuyFiles.out" "./Sorce/api.obj" "./Sorce/bsp.obj" "./Sorce/flash.obj" "./Sorce/halGPIO.obj" "./Sorce/main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: "GuyFiles.out"'
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Sorce/halGPIO.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Sorce/halGPIO.d_raw" --obj_directory="Sorce"  "../Sorce/halGPIO.c"
+"../Sorce/halGPIO.c", line 85: remark #2553-D: (ULP 14.1) Array index (involving "strSize") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 91: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 96: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 96: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 97: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 100: remark #2553-D: (ULP 14.1) Array index (involving "strSize") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 107: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 133: warning #225-D: function "Stepper_clockwise" declared implicitly
+"../Sorce/halGPIO.c", line 155: warning #225-D: function "Stepper_counter_clockwise" declared implicitly
+"../Sorce/halGPIO.c", line 125: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 126: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 131: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 149: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 153: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 170: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 186: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 188: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 189: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 191: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 370: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 374: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 374: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 375: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 408: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../Sorce/halGPIO.c", line 419: remark #1538-D: (ULP 10.1) ISR TimerA_ISR calls function StopAllTimers. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 429: remark #1538-D: (ULP 10.1) ISR Timer1_A0_ISR calls function StopAllTimers. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 473: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 476: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 478: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 480: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 481: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 486: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Sorce/halGPIO.c", line 488: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 490: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 492: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 493: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Sorce/halGPIO.c", line 446: remark #1535-D: (ULP 8.1) variable "coeff_1" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 447: remark #1535-D: (ULP 8.1) variable "coeff_1b" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 448: remark #1535-D: (ULP 8.1) variable "coeff_1c" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 449: remark #1535-D: (ULP 8.1) variable "coeff_2" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 553: remark #1538-D: (ULP 10.1) ISR USCI0TX_ISR calls function START_TIMERA0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 566: remark #1538-D: (ULP 10.1) ISR USCI0TX_ISR calls function START_TIMERA0. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 601: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Sorce/halGPIO.c", line 608: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Sorce/halGPIO.c", line 615: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Sorce/halGPIO.c", line 581: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 584: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 587: remark #1538-D: (ULP 10.1) ISR USCI0RX_ISR calls function strcpy. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 591: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 592: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Sorce/halGPIO.c", line 592: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+"../Sorce/halGPIO.c", line 598: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 605: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 612: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 620: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 625: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 630: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Sorce/halGPIO.c", line 657: remark #1538-D: (ULP 10.1) ISR Joystick_handler calls function delay. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Sorce/halGPIO.c", line 16: remark #1535-D: (ULP 8.1) variable "delay_time" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 28: remark #1535-D: (ULP 8.1) variable "startRotateLEDs" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Sorce/halGPIO.c", line 30: remark #1535-D: (ULP 8.1) variable "counter" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+warning: "../Sorce/halGPIO.c", line 348: Assembly statement "NOP" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Sorce/halGPIO.c", line 348: Assembly statement "NOP" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Sorce/halGPIO.c", line 390: Assembly statement "nop" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Sorce/halGPIO.c", line 390: Assembly statement "nop" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+'Finished building: "../Sorce/halGPIO.c"'
+ 
+'Building target: "GuyFiles.out"'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"GuyFiles.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="GuyFiles_linkInfo.xml" --use_hw_mpy=none --rom_model -o "GuyFiles.out" "./Sorce/api.obj" "./Sorce/bsp.obj" "./Sorce/flash.obj" "./Sorce/halGPIO.obj" "./Sorce/main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: "GuyFiles.out"'
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Source/bsp.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/bsp.d_raw" --obj_directory="Source"  "../Source/bsp.c"
+"../Source/bsp.c", line 55: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+'Finished building: "../Source/bsp.c"'
+ 
+'Building file: "../Source/flash.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/flash.d_raw" --obj_directory="Source"  "../Source/flash.c"
+"../Source/flash.c", line 13: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/flash.c", line 23: warning #515-D: a value of type "int *" cannot be assigned to an entity of type "char *"
+"../Source/flash.c", line 23: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/flash.c", line 34: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/flash.c", line 34: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+"../Source/flash.c", line 34: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/flash.c", line 36: remark #2553-D: (ULP 14.1) Array index (involving "l") of type "int". Recommend using "unsigned int"
+"../Source/flash.c", line 36: remark #2553-D: (ULP 14.1) Array index (involving "l") of type "int". Recommend using "unsigned int"
+"../Source/flash.c", line 40: remark #2553-D: (ULP 14.1) Array index (involving "l") of type "int". Recommend using "unsigned int"
+'Finished building: "../Source/flash.c"'
+ 
+'Building file: "../Source/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/main.d_raw" --obj_directory="Source"  "../Source/main.c"
+"../Source/main.c", line 30: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 43: warning #225-D: function "StepperUsingJoyStick" declared implicitly
+"../Source/main.c", line 69: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 7: remark #1535-D: (ULP 8.1) variable "state" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 8: remark #1535-D: (ULP 8.1) variable "stateStepp" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 9: remark #1535-D: (ULP 8.1) variable "lpm_mode" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: "../Source/main.c"'
+ 
+'Building file: "../Source/api.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/api.d_raw" --obj_directory="Source"  "../Source/api.c"
+"../Source/api.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using ADC10BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/api.c", line 26: warning #515-D: a value of type "short (*)[]" cannot be assigned to an entity of type "unsigned int"
+"../Source/api.c", line 50: remark #1528-D: (ULP 3.1) Detected flag polling using ADC10BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/api.c", line 51: warning #515-D: a value of type "short (*)[]" cannot be assigned to an entity of type "unsigned int"
+"../Source/api.c", line 65: warning #225-D: function "strlen" declared implicitly
+"../Source/api.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 95: warning #515-D: a value of type "int *" cannot be assigned to an entity of type "char *"
+"../Source/api.c", line 118: warning #176-D: expression has no effect
+"../Source/api.c", line 150: warning #176-D: expression has no effect
+"../Source/api.c", line 92: warning #552-D: variable "start" was set but never used
+"../Source/api.c", line 92: warning #552-D: variable "stop" was set but never used
+"../Source/api.c", line 95: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 118: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/api.c", line 120: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 120: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 150: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/api.c", line 152: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 152: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 285: warning #225-D: function "convert_integer_to_string" declared implicitly
+"../Source/api.c", line 316: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/api.c", line 321: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/api.c", line 321: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/api.c", line 325: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/api.c", line 325: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/api.c", line 429: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/api.c", line 430: remark #2553-D: (ULP 14.1) Array index (involving "l") of type "int". Recommend using "unsigned int"
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 203 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 204 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 205 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 206 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 207 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 208 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 210 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 211 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 212 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 213 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 214 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 215 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 216 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 217 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 218 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 220 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 221 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 222 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 224 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 225 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 226 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 228 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 229 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 230 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 232 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 233 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 234 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 235 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 236 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 237 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 243 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 244 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 245 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 246 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 247 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 248 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 257 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 259 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 261 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 265 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 267 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 274 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 276 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 278 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 282 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 284 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 291 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 293 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 295 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 299 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 301 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: "../Source/api.c"'
+ 
+'Building file: "../Source/halGPIO.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/halGPIO.d_raw" --obj_directory="Source"  "../Source/halGPIO.c"
+"../Source/halGPIO.c", line 79: remark #2553-D: (ULP 14.1) Array index (involving "strSize") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 85: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 90: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 90: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 91: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 94: remark #2553-D: (ULP 14.1) Array index (involving "strSize") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 101: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/halGPIO.c", line 130: warning #225-D: function "rotate_clock_direction" declared implicitly
+"../Source/halGPIO.c", line 155: warning #225-D: function "rotate_anti_clock_direction" declared implicitly
+"../Source/halGPIO.c", line 121: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 122: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 128: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/halGPIO.c", line 150: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 153: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/halGPIO.c", line 173: remark #1532-D: (ULP 5.3) Detected sprintf() operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 182: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 184: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 186: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 188: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/halGPIO.c", line 370: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 374: remark #2553-D: (ULP 14.1) Array index (involving "i") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 374: remark #1530-D: (ULP 5.1) Detected modulo operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 375: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 408: remark #1527-D: (ULP 2.1) Detected SW delay loop using empty loop. Recommend using a timer module instead
+"../Source/halGPIO.c", line 419: remark #1538-D: (ULP 10.1) ISR TimerA_ISR calls function StopAllTimers. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Source/halGPIO.c", line 429: remark #1538-D: (ULP 10.1) ISR Timer1_A0_ISR calls function StopAllTimers. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Source/halGPIO.c", line 477: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 480: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 482: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 484: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 485: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 490: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/halGPIO.c", line 492: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 494: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 496: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 497: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/halGPIO.c", line 447: remark #1535-D: (ULP 8.1) variable "coeff_1" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/halGPIO.c", line 448: remark #1535-D: (ULP 8.1) variable "coeff_1b" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/halGPIO.c", line 449: remark #1535-D: (ULP 8.1) variable "coeff_1c" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/halGPIO.c", line 450: remark #1535-D: (ULP 8.1) variable "coeff_2" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/halGPIO.c", line 570: remark #1538-D: (ULP 10.1) ISR USCI0TX_ISR calls function TIMERA0_delay_ms. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Source/halGPIO.c", line 588: remark #1538-D: (ULP 10.1) ISR USCI0TX_ISR calls function TIMERA0_delay_ms. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Source/halGPIO.c", line 624: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Source/halGPIO.c", line 631: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Source/halGPIO.c", line 638: warning #515-D: a value of type "char *" cannot be assigned to an entity of type "int *"
+"../Source/halGPIO.c", line 606: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 608: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 611: remark #1538-D: (ULP 10.1) ISR USCI0RX_ISR calls function strcpy. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Source/halGPIO.c", line 614: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 615: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/halGPIO.c", line 615: remark #1543-D: (ULP 12.2) Detected for loop with repetitive data transfer. Recommend using DMA
+"../Source/halGPIO.c", line 621: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 628: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 635: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 644: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 649: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 654: remark #2553-D: (ULP 14.1) Array index (involving "j") of type "int". Recommend using "unsigned int"
+"../Source/halGPIO.c", line 712: remark #1538-D: (ULP 10.1) ISR Joystick_handler calls function delay. Recommend moving function call away from ISR, or inlining the function, or using pragmas
+"../Source/halGPIO.c", line 17: remark #1535-D: (ULP 8.1) variable "delay_time" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/halGPIO.c", line 29: remark #1535-D: (ULP 8.1) variable "startRotateLEDs" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/halGPIO.c", line 31: remark #1535-D: (ULP 8.1) variable "counter" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+warning: "../Source/halGPIO.c", line 348: Assembly statement "NOP" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Source/halGPIO.c", line 348: Assembly statement "NOP" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Source/halGPIO.c", line 390: Assembly statement "nop" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+warning: "../Source/halGPIO.c", line 390: Assembly statement "nop" creates a label, which may not be what was intended. Use a colon after a label or a space before a non-label to silence the warning.
+'Finished building: "../Source/halGPIO.c"'
+ 
+'Building target: "GuyFiles.out"'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"GuyFiles.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="GuyFiles_linkInfo.xml" --use_hw_mpy=none --rom_model -o "GuyFiles.out" "./Source/api.obj" "./Source/bsp.obj" "./Source/flash.obj" "./Source/halGPIO.obj" "./Source/main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: "GuyFiles.out"'
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+gmake[1]: 'GuyFiles.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Source/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/main.d_raw" --obj_directory="Source"  "../Source/main.c"
+"../Source/main.c", line 31: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 44: warning #225-D: function "StepperUsingJoyStick" declared implicitly
+"../Source/main.c", line 70: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 7: remark #1535-D: (ULP 8.1) variable "state" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 8: remark #1535-D: (ULP 8.1) variable "stateStepp" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 9: remark #1535-D: (ULP 8.1) variable "lpm_mode" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: "../Source/main.c"'
+ 
+'Building file: "../Source/api.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/api.d_raw" --obj_directory="Source"  "../Source/api.c"
+"../Source/api.c", line 25: remark #1528-D: (ULP 3.1) Detected flag polling using ADC10BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/api.c", line 26: warning #515-D: a value of type "short (*)[]" cannot be assigned to an entity of type "unsigned int"
+"../Source/api.c", line 50: remark #1528-D: (ULP 3.1) Detected flag polling using ADC10BUSY. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/api.c", line 51: warning #515-D: a value of type "short (*)[]" cannot be assigned to an entity of type "unsigned int"
+"../Source/api.c", line 65: warning #225-D: function "strlen" declared implicitly
+"../Source/api.c", line 65: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 95: warning #515-D: a value of type "int *" cannot be assigned to an entity of type "char *"
+"../Source/api.c", line 118: warning #176-D: expression has no effect
+"../Source/api.c", line 150: warning #176-D: expression has no effect
+"../Source/api.c", line 92: warning #552-D: variable "start" was set but never used
+"../Source/api.c", line 92: warning #552-D: variable "stop" was set but never used
+"../Source/api.c", line 95: remark #2553-D: (ULP 14.1) Array index (involving "file") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 118: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/api.c", line 120: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 120: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 150: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/api.c", line 152: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 152: remark #2553-D: (ULP 14.1) Array index (involving "k") of type "int". Recommend using "unsigned int"
+"../Source/api.c", line 285: warning #225-D: function "convert_integer_to_string" declared implicitly
+"../Source/api.c", line 316: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/api.c", line 321: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/api.c", line 321: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/api.c", line 325: remark #1530-D: (ULP 5.1) Detected divide operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"../Source/api.c", line 325: remark #1533-D: (ULP 6.1) Detected use of multiplication on a device that has no hardware multiplier
+"../Source/api.c", line 429: remark #1544-D: (ULP 13.1) Detected loop counting up. Recommend loops count down as detecting zeros is easier
+"../Source/api.c", line 430: remark #2553-D: (ULP 14.1) Array index (involving "l") of type "int". Recommend using "unsigned int"
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 203 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 204 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 205 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 206 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 207 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 208 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 210 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 211 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 212 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 213 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 214 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 215 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 216 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 217 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 218 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 220 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 221 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 222 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 224 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 225 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 226 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 228 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 229 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 230 (col. 11): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 232 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 233 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 234 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 235 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 236 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 237 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 243 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 244 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 245 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 246 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 247 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 248 (col. 10): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 257 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 259 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 261 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 265 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 267 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 274 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 276 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 278 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 282 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 284 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 291 (col. 27): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 293 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 295 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 299 (col. 9): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include/_defs.h", line 301 (col. 13): remark #1531-D: (ULP 5.2) Detected floating point operation(s). Recommend moving them to RAM during run time or not using as these are processing/power intensive
+'Finished building: "../Source/api.c"'
+ 
+'Building target: "GuyFiles.out"'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"GuyFiles.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="GuyFiles_linkInfo.xml" --use_hw_mpy=none --rom_model -o "GuyFiles.out" "./Source/api.obj" "./Source/bsp.obj" "./Source/flash.obj" "./Source/halGPIO.obj" "./Source/main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: "GuyFiles.out"'
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Source/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/main.d_raw" --obj_directory="Source"  "../Source/main.c"
+"../Source/main.c", line 32: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 45: warning #225-D: function "StepperUsingJoyStick" declared implicitly
+"../Source/main.c", line 71: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 7: remark #1535-D: (ULP 8.1) variable "state" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 8: remark #1535-D: (ULP 8.1) variable "stateStepp" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 9: remark #1535-D: (ULP 8.1) variable "lpm_mode" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: "../Source/main.c"'
+ 
+'Building target: "GuyFiles.out"'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"GuyFiles.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="GuyFiles_linkInfo.xml" --use_hw_mpy=none --rom_model -o "GuyFiles.out" "./Source/api.obj" "./Source/bsp.obj" "./Source/flash.obj" "./Source/halGPIO.obj" "./Source/main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: "GuyFiles.out"'
+ 
+
+**** Build Finished ****

@@ -1,0 +1,78 @@
+#include  "api.h"         // private library - API layer
+#include  "halGPIO.h"     // private library - HAL layer
+#include "stdio.h"
+
+unsigned int REdge0 = 0;
+unsigned int REdge1 = 0;
+int Fexter = 0;
+char digitsArray[] ={0x30,0x30,0x30,0x30,0x30};
+char fin[] = {0x66,0x69,0x6E,0x3A};
+char Hz[]= {0x48,0x7A};
+//---------------------------------------------------
+//              state1 Function
+//---------------------------------------------------
+void state1Func(){
+  lcd_cmd(0x02); //Return courser to start
+  lcd_puts(fin,4);//fin:
+  lcd_puts(digitsArray,5);
+  lcd_puts(Hz,2);//Hz
+  int i=0;
+    for (int i=6;i>=0;i--){
+      lcd_cmd(0x10);}
+  while (state==state1){
+    startTimer1A0();
+    int Fsmclk = 1153432; //2^20
+    if (REdge0>REdge1){
+    }else if(REdge0==REdge1){
+      Fexter=0; 
+    }else{
+      Fexter = 1153432/(REdge1-REdge0);
+    }
+//    PrintFrequncey(Fexter);
+    FrequnceyToArray(Fexter);
+    lcd_puts(digitsArray,5);
+    for (int i = 4;i>=0;i--){
+      lcd_cmd(0x10);//move left  
+    }
+
+  }
+}
+void FrequnceyToArray(int number){
+    int i =0;
+  for (int i = 4; i >= 0; i--) {
+      digitsArray[i] = 0x30 + (number % 10);
+      number /= 10;
+  }
+}
+//---------------------------------------------------
+//              state2 Function - Seconds Counter
+//---------------------------------------------------
+void state2Func(){
+       showToLCD(seconds0,seconds1,minutes0,minutes1);
+       startTimer0A0();
+       seconds0++;
+       if (seconds0 ==0x3A){
+         seconds0=0x30;
+         if (seconds1 != 0x35){
+           seconds1++;
+         }
+         else{
+           seconds1=0x30;
+           minutes0++;
+           if (minutes0==0x3A){
+             minutes0=0x30;
+             if (minutes1 != 0x35){
+               minutes1++;
+             }
+             else{minutes1=0x30;}
+           }
+         }
+       }
+       
+       
+}
+
+
+
+
+

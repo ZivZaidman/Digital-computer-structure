@@ -1,0 +1,114 @@
+#include  "bsp.h"
+
+              MODULE HAL
+              PUBLIC SysConfig,PBs_handler,delay,Lcd_strobe,TIMER0_ISR,Capture,TIMER1_ISR
+              EXTERN GPIOconfig,state,LCDsconfig,Timerconfig,state0,OneMinCount.state0,FinishCount 
+            
+              RSEG   CODE
+;--------------------------------------------------------------------
+;             System Configuration  
+;--------------------------------------------------------------------
+SysConfig     call #GPIOconfig
+              call #Timerconfig
+              call #LCDsconfig
+              ret
+;----------------------------------------------------------------------- 
+;            PORT2 Interrupt Service Routine
+;-----------------------------------------------------------------------
+PBs_handler  push.w #debounceVal
+             call   #delay 
+             bit.b  #PB0,PBsArrIntPend   ;check if PB0 is pushed
+             jnz    PB0sel 
+             bit.b  #PB1,PBsArrIntPend   ;check if PB1 is pushed
+             jnz    PB1sel
+             bit.b  #PB2,PBsArrIntPend   ;check if PB2 is pushed
+             jnz    PB2sel
+             reti                ; interrupt hapened from another source
+             
+PB0sel       mov    #1,state 
+             mov    #PB0,R4     ; which IntPend to clear
+             bic.w  #TAIFG, &Timer0CCTL0
+             mov.w  #0, TA0R
+             bis.w  #TimerCCIE,&Timer0CCTL0
+             jmp    exitLPM0
+PB1sel       mov    #2,state
+             mov    #PB1,R4     ; which IntPend to clear
+             jmp    exitLPM0
+PB2sel       mov    #3,state
+             mov    #PB2,R4     ; which IntPend to clear
+
+exitLPM0     bic    #CPUOFF,0(SP)  ; Exit LMP0
+             bic.b  R4,PBsArrIntPend
+             mov    #state0,2(SP)
+             reti
+;----------------------------------------------------------------------------------------------
+;            Timers Interupts
+;----------------------------------------------------------------------------------------------             
+TIMER0_ISR     bic    #CPUOFF,0(SP)            ;Exit LMP0
+               bic    #TimerIFG,Timer0CCTL0    ;cancel int flag in CR0 cntl reg
+               inc    R7                       ;inc one sec
+               cmp    #0x3A,R7                 ;check sec > 0
+               JNZ    RetToOneMinCount
+               mov    #0x30,R7                 ;mov 9 to sec
+               inc    R8                       ;dec asarot sec
+               cmp    #0x36,R8                 ;check asrot > 0
+               JNZ    RetToOneMinCount
+               mov    #0x30,R8                ;set sec tp 59 
+               inc    R9                      ;dec min
+               cmp    #0x32,R9                ;check min < 0
+               JNZ    RetToOneMinCount
+               mov    #0x32, R9
+               mov    #0x30, R8               
+               mov    #0x30, R7               
+               bic.w  #TimerCCIE, Timer0CCTL0 ;finish count, disable
+RetToOneMinCount      reti
+
+
+               reti
+TIMER1_ISR     add &TA1IV,PC
+               reti
+               reti
+               reti           ;TACCR1 ISR
+               jmp Timer1Func ;TA1R ISR
+               reti       
+               
+Timer1Func     bic #TAIFG,&TA1CTL                
+               add #1, R11
+               reti
+      
+;----------------------------------------------------------------------------------------------
+;            Polling based Delay function
+;----------------------------------------------------------------------------------------------                     
+delay        pop   R4        ; save return address
+             pop   R5        ; get delay value
+L            dec.w   R5      ;function body begin                 
+             jnz     L       ;function body end
+             nop
+             push.w  R4
+             ret
+;----------------------------------------------------------------------------------------------
+;            LCD Strobe
+;----------------------------------------------------------------------------------------------        
+Lcd_strobe  bis.b  #LCDe,LCDsControlArrPort 
+            nop
+            nop
+            bic.b  #LCDe,LCDsControlArrPort
+            ret             
+            
+            
+;----------------------------------------------------------------------------------------------
+;           Capture func
+;----------------------------------------------------------------------------------------------
+Capture     bis   #CCIS_3,Timer1CCTL1
+            pop   R4
+            push  TA1CCR1
+            push  R4 
+            bic   #CCIS_1,Timer1CCTL1
+            bic   #0x1,Timer1CCTL1
+            ret
+;----------------------------------------------------------------------------------------------
+             ENDMOD
+             END
+
+
+ 

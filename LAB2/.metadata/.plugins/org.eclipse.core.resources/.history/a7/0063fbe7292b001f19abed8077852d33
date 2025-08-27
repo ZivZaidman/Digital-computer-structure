@@ -1,0 +1,44 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL = cmd.exe
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../208660365_326424256/CCS/source/api.c \
+../208660365_326424256/CCS/source/bsp.c \
+../208660365_326424256/CCS/source/halGPIO.c \
+../208660365_326424256/CCS/source/main.c 
+
+C_DEPS += \
+./208660365_326424256/CCS/source/api.d \
+./208660365_326424256/CCS/source/bsp.d \
+./208660365_326424256/CCS/source/halGPIO.d \
+./208660365_326424256/CCS/source/main.d 
+
+OBJS += \
+./208660365_326424256/CCS/source/api.obj \
+./208660365_326424256/CCS/source/bsp.obj \
+./208660365_326424256/CCS/source/halGPIO.obj \
+./208660365_326424256/CCS/source/main.obj 
+
+OBJS__QUOTED += \
+"208660365_326424256\CCS\source\api.obj" \
+"208660365_326424256\CCS\source\bsp.obj" \
+"208660365_326424256\CCS\source\halGPIO.obj" \
+"208660365_326424256\CCS\source\main.obj" 
+
+C_DEPS__QUOTED += \
+"208660365_326424256\CCS\source\api.d" \
+"208660365_326424256\CCS\source\bsp.d" \
+"208660365_326424256\CCS\source\halGPIO.d" \
+"208660365_326424256\CCS\source\main.d" 
+
+C_SRCS__QUOTED += \
+"../208660365_326424256/CCS/source/api.c" \
+"../208660365_326424256/CCS/source/bsp.c" \
+"../208660365_326424256/CCS/source/halGPIO.c" \
+"../208660365_326424256/CCS/source/main.c" 
+
+

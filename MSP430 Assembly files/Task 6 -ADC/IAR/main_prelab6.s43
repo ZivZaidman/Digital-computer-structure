@@ -1,0 +1,60 @@
+#include  "bsp.h"
+
+             NAME   MAIN
+             PUBLIC state,main,state0,sampleMEM,epsilon,signalstate,signalstateOld,z2d_counter,zd_counter,PWM,TRI,check_counter,sampleCounter,AVG,
+             EXTERN SysConfig,ClrLEDs,Double,DecLED,delay,tic, toc, func,ADC10con2,ADC10con3,state3Func
+             EXTERN PrintLEDs,ReadSWs,PrintSWs2LEDs,Lcd_strobe,TwoMinShow,ADC10con1,checkSignal,AvgVolt
+             
+;----------------------------------------------------------------------------------
+             ORG      DataSegStart         ; Begins a DATA segment
+             
+state           DW   0                        ; state variable
+sampleMEM       DW   230h
+epsilon         DW   4
+signalstate     DW   0
+signalstateOld  DW   0
+zd_counter      DW   0
+z2d_counter     DW   0
+PWM             DW   0
+TRI             DW   0
+check_counter   DW   10
+sampleCounter   DW   0
+AVG             DW   0
+;-------------------------------------------------------------------------------------          
+             ;RSEG    CSTACK    ; shows to compiler where is the RAM populating limit
+                                ; can be ignored
+;-------------------------------------------------------------------------------------
+             ORG     CodeSegStart            ; Program Reset = Begins a CODE segment
+           
+main         mov.w   #StackTosStart,SP      ; Initialize stack pointer to the RAM end 
+StopWDT      mov.w   #WDTPW+WDTHOLD,&WDTCTL    
+             call    #SysConfig
+             clr     state                   ; set to idle state at the beginning
+
+;---------------------- FSM_loop -------------------------------------
+state0       cmp     #0x00,state         ;check if state0           
+             jnz     state1
+             bis.w   #CPUOFF+GIE,SR 
+
+state1       cmp     #0x01,state         ;check if state1
+             jnz     state2
+             mov     #0,signalstateOld
+             call    #ADC10con1
+             call    #checkSignal
+             
+            
+state2       cmp     #0x02,state         ;check if state2
+             jnz     state3
+             mov     #0,  AVG
+             mov     #100,sampleCounter
+             call    #ADC10con2
+             call    #AvgVolt
+
+state3       cmp     #0x3,state
+             jnz     state0
+             call    #ADC10con3
+             call    #state3Func
+
+             jmp     state0       
+                 
+             END

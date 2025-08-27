@@ -1,0 +1,212 @@
+#include  "bsp.h"
+
+
+Lcd_data     MACRO char
+             push   #delay5ms
+             call   #delay
+             mov.b  #0,LCDsDataArrPort
+             bis.b  #LCDrs,LCDsControlArrPort
+             mov.b  char,LCDsDataArrPort
+             call   #Lcd_strobe
+             bic.b  #LCDrs,LCDsControlArrPort
+             ENDM
+             
+             
+             
+Lcd_cmd      MACRO  command
+             push   #delay15ms
+             call   #delay
+             mov.b  command,LCDsDataArrPort
+             call   #Lcd_strobe
+             ENDM             
+             
+             
+
+             MODULE API
+             PUBLIC PWM,raise0LCD,OneMinCount,TwoMinShow,tic,toc,func,FinishCount
+             EXTERN delay,state,Lcd_strobe,Capture
+             
+             ORG      DataSegStart
+             
+             RSEG   CODE
+;-------------------------------------------------------------
+;             PWM
+;-------------------------------------------------------------
+PWM         mov.w #TASSEL_2+MC_1,&TA1CTL_
+            mov.w #575,&TA1CCR0
+            mov.w #OUTMOD_7, &TA1CCTL1_
+            mov.w #100, &TA1CCR1
+            bic.w #TAIFG+TAIE,TA0CTL
+            mov.w #TASSEL_2+ID_3+MC_1,&TA0CTL
+            mov.w #0,&TA0R
+            mov.w #TAIE, &TA0CCTL0
+            mov.w #0x7FFF,&TA0CCR0
+            clr R9
+            ret   
+;-------------------------------------------------------------
+;             LCDs write
+;-------------------------------------------------------------
+raise0LCD   Lcd_cmd  #0x01
+            Lcd_cmd  #0x02
+            Lcd_data #'T'
+            Lcd_data #'h'
+            Lcd_data #'i'
+            Lcd_data #'s'
+            Lcd_data #' '
+            Lcd_data #'i'
+            Lcd_data #'s'
+            Lcd_data #' '
+            Lcd_data #'a'
+            Lcd_data #' '
+            Lcd_cmd #0xC0            
+            Lcd_data #'w'
+            Lcd_data #'a'
+            Lcd_data #'s'
+            Lcd_data #'t'
+            Lcd_data #'e'
+            Lcd_data #' '
+            Lcd_data #'o'
+            Lcd_data #'f'            
+            Lcd_data #' '
+            Lcd_data #'t'
+            Lcd_data #'i'            
+            Lcd_data #'m'
+            Lcd_data #'e'            
+            ret
+            bis.w   #CPUOFF+GIE,SR            
+            
+            
+            
+TwoMinShow     Lcd_cmd  #0x01
+               Lcd_cmd  #0x02
+               Lcd_data #'0'
+               Lcd_data #'0'
+               Lcd_data #':'
+               Lcd_data #'0'               
+               Lcd_data #'0'
+               mov #0x30 ,R7               
+               mov #0x30 ,R8
+               mov #0x30  ,R9
+Wait           bis.w #CPUOFF+GIE,SR 
+
+OneMinCount    Lcd_cmd  #0x01
+               Lcd_cmd  #0x02
+               Lcd_data #'0'
+               Lcd_data R9
+               Lcd_data #':'
+               Lcd_data R8
+               Lcd_data R7
+               cmp #0x32,R9
+               jnz Wait
+FinishCount    mov #0, state
+               ret
+               
+;------------------------------------------------------------- 
+;              tic func
+;-------------------------------------------------------------
+tic           clr     R11
+              bic     #TAIFG, TA1CTL
+              bis     #TAIE, TA1CTL
+              call    #Capture
+              pop     R7
+              ret
+;-------------------------------------------------------------
+;              toc func         
+;-------------------------------------------------------------
+toc           bic.b   #0x8,P2OUT
+              call    #Capture
+              bic     #TAIE,TA1CTL
+              pop     R8
+              sub     R7,R8
+              JC     noOverFlow
+              dec     R11
+noOverFlow                  
+              mov     R8,R7
+              call    #Print2LCD
+              mov     #0,state
+              ret              
+;-------------------------------------------------------------
+;             print to LCD
+;-------------------------------------------------------------
+Print2LCD    mov #4, R15
+             clr R14
+             Lcd_cmd #0x1
+             Lcd_cmd #0x2
+             Lcd_data #'R'
+             Lcd_data #'u'
+             Lcd_data #'n'
+             Lcd_data #' '
+             Lcd_data #'t'
+             Lcd_data #'i'
+             Lcd_data #'m'
+             Lcd_data #'e'            
+             Lcd_data #':'
+             Lcd_cmd #0xC0
+PrintLoop    dec R15
+             jn  OtherflowReg
+             call #DIV16bit
+             cmp #0xA,R10
+             JGE Higherthan10
+             mov #0x30,R12
+             add R10,R12
+             jmp con             
+Higherthan10 mov #0x37, R12
+             add R10,R12
+con          Push R12
+             jmp PrintLoop
+
+OtherflowReg  add #4,R14
+              mov R11, R8
+PrintLoop2    cmp #0, R8
+              jz  finish
+              inc  R14
+              call #DIV16bit
+              cmp #0xA,R10
+              JGE Higherthan102
+              mov #0x30,R12
+              add R10,R12
+              jmp con2             
+Higherthan102 mov #0x37, R12
+              add R10,R12
+con2          push R12
+              jmp PrintLoop2
+             
+finish       pop R12
+             Lcd_data R12
+             dec R14
+             jnz finish
+             ret
+;-------------------------------------------------------------------------------
+;      16x16 Unsigned Divider: 
+;      Quotient = Divided/Divisor , Remainder=Divided/Divisor
+;-------------------------------------------------------------------------------
+DIV16bit                                  ;Divisor=10,R8=Divided;Remaider=R10;Q=R13
+                mov     #17,R9            ;
+                clr     R13                ; Quotient register
+                mov.w   R8,R4        ; Devided registers is R5,R4
+                clr     R5            ;clr remainder
+                mov.w   #16,R6        ; Divisor registers is R6
+                
+DIVLOOP1        rla     R13
+DIVLOOP2        dec     R9
+                jz      DIVLOOP3
+                rla     R4
+                rlc     R5
+                cmp     R6,R5
+                jlo     DIVLOOP1              
+                sub     R6,R5
+                setc
+                rlc     R13
+                jmp     DIVLOOP2
+                
+DIVLOOP3        mov.w   R13,R8
+                mov.w   R5,R10
+                ret 
+;-------------------------------------------------------------
+;            func
+;-------------------------------------------------------------
+func         call #raise0LCD
+             ret
+;-------------------------------------------------------------
+             ENDMOD    
+             END

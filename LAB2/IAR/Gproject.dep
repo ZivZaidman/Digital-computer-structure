@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1517410273</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Sorce\halGPIO.c.txt</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp.r43</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\api.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Header\halGPIO.h.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Header\flash.h.txt</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\config\lnk430G2553.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\bsp.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\halGPIO.c</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Sorce\main.c.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Header\app.h.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Sorce\api.c.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Header\api.h.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Header\bsp.h.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Sorce\bsp.c.txt</file>
+      <file>$PROJ_DIR$\..\..\FinalProject\GLfiles\Sorce\flash.c.txt</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\bsp.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\bsp.h</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\main.c</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\halGPIO.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\api.c</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\api.h</file>
+      <file>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\Gproject.pbd</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\halGPIO.c</file>
+      <file>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\api.c</file>
+      <file>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\bsp.c</file>
+      <file>$PROJ_DIR$\Debug\Exe\Gproject.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$PROJ_DIR$\api.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\halGPIO.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\api.pbi</file>
+      <file>$PROJ_DIR$\..\LAB2CCS\app.h</file>
+      <file>$PROJ_DIR$\bsp.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\halGPIO.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\halGPIO.c</file>
+      <file>$TOOLKIT_DIR$\inc\msp430g2553.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\halGPIO.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LAB2CCS\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 29 50 6 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29 50 6 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LAB2CCS\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 34 31 29 50 6 12 45</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34 31 29 50 6 12 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LAB2CCS\api.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 34 31 29 50 6 12 45 1 15 3 4 32 11 10 2 8 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34 31 29 50 6 12 45 1 15 3 4 11 10 2 8 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 15 3 4 11 10 2 8 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\Gproject.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 44 17 43 48</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\LAB2CCS\halGPIO.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 31 29 50 6 12 45</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 29 50 6 12 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\api.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 15 3 4 11 10 2 8 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\Gproject.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 16 9 5 47 41 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\api.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1 15 3 4 11 10 2 8 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\bsp.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\LAB3\GCODE\Gsource\halGPIO.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

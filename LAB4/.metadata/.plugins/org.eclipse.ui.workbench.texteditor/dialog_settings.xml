@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="Timer" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="timer"/>
+			<item value="init_v"/>
+			<item value="LCD_MODE ? 0xFF : (0x0F &lt;&lt; LCD_DATA_OFFSET)"/>
+			<item value="LCD_DATA_WRITE"/>
+			<item value="#define LCD_DATA_OFFSET 0x04 //data pin selection offset for 4 bit mode, variable range is 0-4, default 0 - Px.0-3, no offset"/>
+			<item value="float"/>
+			<item value="floatToPrint"/>
+			<item value="input"/>
+		</list>
+		<list key="replacehistory">
+			<item value="num"/>
+			<item value="TA0"/>
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="695" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="512" key="DIALOG_HEIGHT"/>
+		<item value="-462" key="DIALOG_X_ORIGIN"/>
+		<item value="371" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

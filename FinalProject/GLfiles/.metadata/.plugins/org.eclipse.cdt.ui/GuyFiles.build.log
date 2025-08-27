@@ -1,0 +1,25 @@
+
+**** Build of configuration Debug for project GuyFiles ****
+
+"C:\\ti\\ccsv7\\utils\\bin\\gmake" -k -j 8 all -O 
+ 
+'Building file: "../Source/main.c"'
+'Invoking: MSP430 Compiler'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --include_path="C:/ti/ccsv7/ccs_base/msp430/include" --include_path="C:/Users/zivza/Ziv/English/Comp2/projects/FinalProject/GLfiles/GuyFiles" --include_path="C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --preproc_with_compile --preproc_dependency="Source/main.d_raw" --obj_directory="Source"  "../Source/main.c"
+"../Source/main.c", line 32: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 45: warning #225-D: function "StepperUsingJoyStick" declared implicitly
+"../Source/main.c", line 71: remark #1528-D: (ULP 3.1) Detected flag polling using rotateIFG. Recommend using an interrupt combined with enter LPMx and ISR
+"../Source/main.c", line 7: remark #1535-D: (ULP 8.1) variable "state" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 8: remark #1535-D: (ULP 8.1) variable "stateStepp" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+"../Source/main.c", line 9: remark #1535-D: (ULP 8.1) variable "lpm_mode" is used as a constant. Recommend declaring variable as either 'static const' or 'const'
+'Finished building: "../Source/main.c"'
+ 
+'Building target: "GuyFiles.out"'
+'Invoking: MSP430 Linker'
+"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"GuyFiles.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccsv7/ccs_base/msp430/include" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-msp430_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="GuyFiles_linkInfo.xml" --use_hw_mpy=none --rom_model -o "GuyFiles.out" "./Source/api.obj" "./Source/bsp.obj" "./Source/flash.obj" "./Source/halGPIO.obj" "./Source/main.obj" "../lnk_msp430g2553.cmd"  -llibc.a 
+<Linking>
+remark #10372-D: (ULP 4.1) Detected uninitialized Port 3 in this project. Recommend initializing all unused ports to eliminate wasted current consumption on unused pins.
+'Finished building target: "GuyFiles.out"'
+ 
+
+**** Build Finished ****

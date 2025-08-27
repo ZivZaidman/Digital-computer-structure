@@ -1,0 +1,56 @@
+#include  <msp430xG46x.h>
+;---------------------------------------------------------------
+;          MACRO Defenition
+;---------------------------------------------------------------
+delaymac   MACRO   time
+           local   L3      
+           mov.w   time,R15               
+L3         dec.w   R15                     
+           jnz     L3                                          
+           ENDM
+;---------------------------------------------------------------
+#define   LedPortSel  &P9SEL
+#define   LedPortDir  &P9DIR
+#define   LedPort     &P9OUT
+//==============================================================
+                MODULE    PortLeds
+                PUBLIC    P9Config, SkipLedSerial
+                EXTERN    Delay100us, Delay1sec
+                RSEG      CODE
+                
+P9Config        bic.b   #0xff,LedPortSel
+                bis.b   #0xff,LedPortDir            
+                clr.b   LedPort
+                ret
+            
+   
+SkipLedSerial   mov.b    #0x01,R14
+Subloop         mov.b    R14,&P9OUT            
+                call     #Delay100us  ;delay using routine
+                delaymac #52429       ;delay using Macro        
+                rla.b    R14
+                tst.b    R14 
+                jz       finish          
+                jmp      Subloop 
+finish          ret
+                        
+                ENDMOD 
+//==============================================================
+                MODULE  Delay
+                PUBLIC  Delay100us, Delay1sec
+                RSEG    CODE
+            
+Delay100us      mov.w   #33,R15              
+L1              dec.w   R15                     
+                jnz     L1                                    
+                ret
+            
+Delay1sec       mov.w   #10000,R13              
+L2              call    #Delay100us
+                dec.w   R13                     
+                jnz     L2                                    
+                ret
+            
+                ENDMOD
+//=============================================================            
+                END

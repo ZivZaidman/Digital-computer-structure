@@ -1,0 +1,23 @@
+#include  <msp430xG46x.h>
+;-------------------------------------------------------------------------------          
+           NAME    Main
+           PUBLIC  Main
+           EXTERN  P9Config, SkipLedSerial
+           EXTERN  Delay100us, Delay1sec  
+
+           RSEG    CSTACK                  
+           RSEG    CODE                    
+Main       mov.w   #SFE(CSTACK),SP          
+StopWDT    mov.w   #WDTPW+WDTHOLD,&WDTCTL  
+           call    #P9Config                                 
+           
+L          call    #SkipLedSerial                                                                             			
+           call    #Delay1sec  
+           jmp     L
+           nop              ; for debugging    
+;*******************************************************************************
+           COMMON  INTVEC  ;Interrupt Vectors-Begins a common segment INTVEC 
+;*******************************************************************************
+           ORG     RESET_VECTOR   ; MSP430 RESET Vector
+           DW      Main                   
+           END     

@@ -1,0 +1,151 @@
+#include  "../header/api.h"         // private library - API layer
+#include  "../header/app.h"         // private library - APP layer
+
+enum FSMstate state;
+enum Motorstate stepState;
+enum SYSmode lpm_mode;
+int input_slot=0;
+char input[80]={0};
+int Vy_Vx[2]={0};
+char Test[5]={0};
+int ack=0;
+int d=500;
+
+void main(void){
+
+
+     state = Idle;
+     stepState = Idlestep;
+     lpm_mode = mode0;     // start in idle state on RESET
+     sysConfig();     // Configure GPIO, Init ADC
+     lcd_init();
+     lcd_clear();
+     //dec_lcd(10);
+     /*while (1){
+         //inc_lcd(20);
+         //dec_lcd(25);
+         rra_lcd('X');
+         //lcd_puts('x',1);
+         //lcd_display_shift();
+         TIMERA0_delay_ms(0xFFFF);
+     }*/
+
+
+
+
+     while (1){
+         switch(state){
+          case Idle:
+              lcd_clear();
+              //stepper_deg(180);
+              //stepper_scan(270,90);
+              __bis_SR_register(LPM0_bits + GIE);       // wait for command from SW
+              break;
+          case calibration: //stepmotor calibration
+              IE2 |= UCA0RXIE; // Enable USCI_A0 RX interrupt
+              clibrateMotor();
+              break;
+          case JoystickRotation:
+              IE2 |= UCA0RXIE; // Enable USCI_A0 RX interrupt
+              Joystickcontroledangle();
+              break;
+          case Painter:
+               IE2 |= UCA0RXIE;
+               joystick_painter();
+               break;
+              }
+
+         }
+
+}
+/*
+ * void Leonardo_de_joystick() {
+        while (state == state2){
+            joy_stickIntEN &= ~BIT5;
+            Tx_index = 0;
+            if (send_coor == 1){
+                JoyStick_Sample();
+                // Convert Vx and Vy to strings and concatenate with a comma in between
+                sprintf(results_to_send, "%d,%d\n", Vx, Vy);
+                lcd_puts(results_to_send);
+                IE2 |= UCA0TXIE; // Enable USCI_A0 TX interrupt
+                send_coor = 0;
+                __bis_SR_register(LPM0_bits + GIE);          // LPM0, RX_ISR will force exit
+            }
+            joy_stickIntEN |= BIT5;
+     //       __bis_SR_register(LPM0_bits + GIE);          // LPM0, RX_ISR will force exit
+        }
+    }
+    void JoyStick_Sample(){
+        Vx = 0;
+        Vy = 0;
+        int i;
+        for (i = 0 ; i < 4 ; i++){                       // sample for 4 time to get better resolution
+            ADC10CTL0 &= ~ENC;                           // turn off ADC activity
+            while (ADC10CTL1 & ADC10BUSY);               // Wait for ADC10 core to be active
+            ADC10SA = (unsigned int)&joystick_location[0];                // assign ADC data address to joystick_location which is an array with the dimension of 2
+            ADC10CTL0 |= ENC + ADC10SC;                  //  start sampling and conversion
+            __bis_SR_register(LPM0_bits + GIE);          // LPM0, ADC10_ISR will force exit
+            Vy += joystick_location[0];                  // add the Vy sample to the Vy accumulator
+            Vx += joystick_location[1];                  // add the Vx sample to the Vx accumulator
+        }
+        Vy = Vy>>2;         // divide by 4 to get the average Joystick location
+        Vx = Vx>>2;         // divide by 4 to get the average Joystick location
+    }
+//*********************************************************************
+//            Port1 Interrupt Service Routine
+//*********************************************************************
+#pragma vector=PORT1_VECTOR
+  __interrupt void Joystick_handler(void){
+      IE2 &= ~UCA0TXIE;    // Disable USCI_A0 TX interrupt
+      delay(debounceVal);
+      if (state == state2 && (joy_stickIntPend & BIT5)) {
+          switch(painter_state) {
+              case 0:   // currently in paint mode, switch to erase mode
+                  painter_state = 1;
+                  Tx_index = 0;
+                  strcpy(results_to_send, "");
+         //         memset(results_to_send, '\0', sizeof(results_to_send));
+                  strcpy(results_to_send, "E\n"); // Copy the string into the array
+ //                 UCA0TXBUF = results_to_send[Tx_index++]; // Start transmission
+                  IE2 |= UCA0TXIE; // Enable USCI_A0 TX interrupt
+                  break;
+
+              case 1:   // currently in erase mode, switch to neutral mode
+                  painter_state = 2;
+                  Tx_index = 0;
+
+                  strcpy(results_to_send, "");
+        //          memset(results_to_send, '\0', sizeof(results_to_send));
+                  strcpy(results_to_send, "N\n"); // Copy the string into the array
+//                  UCA0TXBUF = results_to_send[Tx_index++]; // Start transmission
+                  IE2 |= UCA0TXIE; // Enable USCI_A0 TX interrupt
+                  break;
+
+              case 2:   // currently in neutral mode, switch to paint mode
+                  painter_state = 0;
+                  Tx_index = 0;
+
+                  strcpy(results_to_send, "");
+               //   memset(results_to_send, '\0', sizeof(results_to_send));
+                  strcpy(results_to_send, "P\n"); // Copy the string into the array
+//                  UCA0TXBUF = results_to_send[Tx_index++]; // Start transmission
+                  IE2 |= UCA0TXIE; // Enable USCI_A0 TX interrupt
+                  break;
+          }
+          send_coor = 1;
+  //        Leonardo_de_joystick();
+      }
+
+      if (calibflag == 1 && (joy_stickIntPend & BIT5)){
+          state = state3;
+          calib_start = calib_start^1;
+          LPM0_EXIT;
+
+      }
+      joy_stickIntPend &= ~BIT5;
+
+      LPM0_EXIT;
+}
+
+ */

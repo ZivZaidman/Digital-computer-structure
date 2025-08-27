@@ -1,0 +1,90 @@
+#include  "../header/bsp.h"    // private library - BSP layer
+
+//-----------------------------------------------------------------------------
+//           GPIO configuration
+//-----------------------------------------------------------------------------
+void GPIOconfig(void){
+  WDTCTL = WDTHOLD | WDTPW;     // Stop WDT
+
+/*
+  // RBG Configuration
+    RGBArrPortDir |= BIT7 + BIT6 + BIT0;
+    RGBArrPortOut |= BIT7 + BIT6 + BIT0;
+    RGBArrPortSEL &= ~(BIT7 + BIT6 + BIT0);
+*/
+
+  // JoyStick Configuration  P1.3 - Vrx; P1.4 - Vry; P1.5 - PB,SW
+  // P1.3-P1.4 - X(Don't care) for Sel, Dir According the dataSheet For A3,A4 input Select For ADC
+  JoyStickPortSEL &= ~BIT5;  // P1.5 Sel = '0'
+  JoyStickPortDIR &= ~BIT5;  // P1.5 input = '0'
+  JoyStickPortREN |= BIT5;
+  JoyStickPortOUT |= BIT5;  //
+  JoyStickIntEN = BIT5; // P1.5 PB_interrupt = '1'
+  //JoyStickIntEdgeSel &= ~BIT5; // P1.5 PB pull-down - '0'
+  //option - adding REN command
+  JoyStickIntPend = 0x00; // Reset Int IFG - '0'
+
+  // Stepmotor Configuration
+  StepmotorPortSEL &= ~(BIT0+BIT1+BIT2+BIT3);  // P2.0-P2.3 Sel = '0'
+  StepmotorPortDIR |= BIT0+BIT1+BIT2+BIT3;  // P2.0-P2.3 output = '1'
+
+  // LCD Setup
+  LCD_DATA_WRITE &= ~0xFF;      // Clear LCD data output
+  LCD_DATA_SEL &= ~0xF0;        // Select GPIO function for LCD data
+  LCD_DATA_DIR = 0xFF;         // Set LCD data pins as outputs (upper 4 bits)
+  LCD_CTL_SEL &= ~0xC1;         // Select GPIO function for LCD control
+
+
+  _BIS_SR(GIE);                     // enable interrupts globally
+}
+//-------------------------------------------------------------------------------------
+//            Stop All Timers
+//-------------------------------------------------------------------------------------
+void StopAllTimers(void){
+    TACTL = MC_0; // halt timer A
+
+}
+//-------------------------------------------------------------------------------------
+//            Timer A  configuration
+//-------------------------------------------------------------------------------------
+void TIMER_A0_config(unsigned int counter){
+    TACCR0 = counter; // (2^20/8)*345m = 45219 -> 0xB0A3
+    TA0CTL = TASSEL_2 + MC_1 + ID_3;  //  select: 2 - SMCLK ; control: 1 - Up ; divider: 3 - /8
+    TA0CTL |= TACLR+TAIE;
+    TACCTL0 = CCIE;
+}
+//--------------------------------------------------------------
+//                 UART configuration
+//--------------------------------------------------------------
+void UARTConfig(void){
+    WDTCTL = WDTHOLD | WDTPW;        // Stop WDT
+
+    if (CALBC1_1MHZ==0xFF)                    // If calibration constant erased
+    {
+//      while(1);                               // do not load, trap CPU!!
+    }
+    DCOCTL = 0;                               // Select lowest DCOx and MODx settings
+    BCSCTL1 = CALBC1_1MHZ;                    // Set DCO
+    DCOCTL = CALDCO_1MHZ;
+    UARTArrPortSel       |= BIT1 + BIT2;
+    UARTArrPortSel2      |= BIT1 + BIT2;
+//  UARTArrPortDir       |= BIT1 + BIT2; //RXLED + TXLED
+//  UARTArrPortOUT       &= ~(BIT1 + BIT2);
+    UCA0CTL1             |= UCSSEL_2;
+    UCA0BR0              = 104;
+    UCA0BR1              = 0x00;
+    UCA0MCTL             = UCBRS0;
+    UCA0CTL1             &= ~UCSWRST;
+    IE2                  |= UCA0RXIE;
+
+}
+//-------------------------------------------------------------------------------------
+//            ADC configuration
+//-------------------------------------------------------------------------------------
+void ADCconfig(void){
+      ADC10CTL0 = ADC10SHT_3 + MSC + ADC10ON + ADC10IE;   // 64*ADCLK+ Turn on + Enable Interrupt
+      ADC10CTL1 = INCH_4 + CONSEQ_1 + ADC10SSEL_3;            // A4/A3 highest highest channel for a sequence of conversions
+      ADC10DTC1 = 0x02;                         // 2 conversions
+      ADC10AE0 |= BIT3+BIT4;                         // P1.3 and P1.4 ADC option select
+}
+

@@ -1,0 +1,160 @@
+#ifndef _app_H_
+#define _app_H_
+
+enum FSMstate{Idle,calibration,JoystickRotation,Painter,state4,state5,state6,state7,state8,state9}; // global variable
+enum Motorstate{Idlestep,Rotate, StopRotate, JRcontrol};
+enum StatusReceive{Name,Size,Content};
+enum SYSmode{mode0,mode1,mode2,mode3,mode4}; // global variable
+extern int ack;
+
+#endif
+/*
+//RX ISR*****************************************
+    #if defined(_TI_COMPILER_VERSION) || defined(IAR_SYSTEMS_ICC_)
+    #pragma vector=USCIAB0RX_VECTOR
+    __interrupt void USCI0RX_ISR(void)
+    #elif defined(_GNUC_)
+    void _attribute_ ((interrupt(USCIAB0RX_VECTOR))) USCI0RX_ISR (void)
+    #else
+    #error Compiler not supported!
+    #endif
+    {
+        RxData[j] = UCA0RXBUF;
+        j++;
+
+        if (script_state == nameupdate && RxData[j-1] == '\x0a') {   //  indicates EOF
+            int i;
+            for (i = 0; i < j; i++) {
+                file.file_name[i] = RxData[i]; // Copy the received file name from RxData to file.file_name
+            }
+            script_state = scriptreceive; // file received
+            j = 0;
+        }
+        if (script_state == scriptreceive && RxData[j-1] == 'f') {
+            strcpy(flash_buffer, RxData);  // upload the received data to the flash input buffer
+            script_state = scriptupload; // Set script state to indicate flash upload of file
+            script_pointer1 = (int*) 0x2000; // Set pointer to the address for the 1st file
+            file.file_ptr[0] = script_pointer1; // Assign pointer to the file_ptr array
+            file.num_of_files += 1; // Update the number of files
+            j = 0; // Reset the index for RxData
+        }
+        if (script_state == scriptreceive && RxData[j-1] == 'g') { // Pointer for the 2nd selected file
+            strcpy(flash_buffer, RxData); // upload the received data to the flash input buffer
+            script_state = scriptupload; // Set script state to indicate flash upload of file
+            script_pointer2 = (int*) 0x2040; // Set pointer to the address for the 2nd file
+            file.file_ptr[1] = script_pointer2; // Assign pointer to the file_ptr array
+            file.num_of_files += 1; // Update the number of files
+            j = 0; // Reset the index for RxData
+        }
+        if (script_state == scriptreceive && RxData[j-1] == 'h') { // Pointer for the 3rd selected file
+            strcpy(flash_buffer, RxData); // upload the received data to the flash input buffer
+            script_state = scriptupload; // Set script state to indicate flash upload of file
+            script_pointer3 = (int*) 0x2080; // Set pointer to the address for the 3rd file
+            file.file_ptr[2] = script_pointer3; // Assign pointer to the file_ptr array
+            file.num_of_files += 1; // Update the number of files
+            j = 0; // Reset the index for RxData
+        }
+/*
+        // Check if the received character is 'T', 'U', or 'V' to set the execution index
+        if (RxData[j-1] == 'T') { // Index for the executed list (1 file)
+            ExecuteFlag = 1; // Set flag to indicate that execution should begin
+            j = 0; // Reset the index for RxData
+            file.num_of_files = 1; // Update the number of files to 1
+        }
+        if (RxData[j-1] == 'U') { // Index for the executed list (2 files)
+            ExecuteFlag = 1; // Set flag to indicate that execution should begin
+            j = 0; // Reset the index for RxData
+            file.num_of_files = 2; // Update the number of files to 2
+        }
+        if (RxData[j-1] == 'V') { // Index for the executed list (3 files)
+            ExecuteFlag = 1; // Set flag to indicate that execution should begin
+            j = 0; // Reset the index for RxData
+            file.num_of_files = 3; // Update the number of files to 3
+        }
+    *//*
+        // Check for state commands to update the state machine
+        if (RxData[0] == 'm') { // Command to set state to 'manual'
+            state = state1; // Set the system state to manual
+            stepper_status = stopMode; // Initialize the stepping state
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 'P') { // Command to set state to 'painter'
+            state = state2; // Set the system state to painter mode
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 'C') { // Command to set state to 'calibration'
+            state = state3; // Set the system state to calibration mode
+            calibflag = 1;
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 's' && script_state != nameupdate && script_state != scriptreceive) { // Command to set state to 'script mode'
+            state = state4; // Set the system state to script mode
+            script_state = nameupdate;
+            j = 0; // Reset the index for RxData
+        }
+
+        // Check for commands to control motor rotation
+        if (RxData[0] == 'A') { // Command to auto-rotate
+            state = state1; // Set the system state to manual
+            stepper_status = rotationMode; // Set the stepping state for auto-rotation
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 'M') { // Command to stop rotation
+            state = state1; // Set the system state to manual
+            stepper_status = stopMode; // Set the stepping state to stop rotation
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 'J') { // Command to rotate with joystick
+            state = state1; // Set the system state to manual
+            stepper_status = manualMode; // Set the stepping state to joystick control
+            stepper_position = 0;
+            begin_manual_flag = 0;
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 'B') { // Command to set state to 'calibration'
+            state = state0; // Set the system state to calibration mode
+            script_state = nameupdate;
+            calibflag = 0;
+            calib_start = 0;    // to exit calibration loop
+            steps_count_flash = steps_count_flash << 2; //calculation to get 4 steps per loop
+            write_int_flash(0xF000, steps_count_flash); //saves the cycles count in 0x11111 address in flash memory
+            write_int_flash(0xF004, phi);   //saves phi value in 0x11115 address in flash memory
+            degree_steps = divideBy360(steps_count);
+            j = 0; // Reset the index for RxData
+        }
+        else if (RxData[0] == 'R'){ // PC side is ready to receive data
+            state = state2;         // make sure state is painter
+            //lcd_clear();
+            send_xORy ^= 1; // flag that indicates if sending Vx (send_xORy = 0) or Vy (send_xORy = 1)
+            send_coor = 1;
+ //           Leonardo_de_joystick();
+            j = 0;
+        }
+
+        // Exit Low Power Mode 0 and enable interrupts
+        LPM0_EXIT;
+    }
+
+
+//TX ISR*****************************************
+#if defined(_TI_COMPILER_VERSION) || defined(IAR_SYSTEMS_ICC_)
+#pragma vector=USCIAB0TX_VECTOR
+__interrupt void USCI0TX_ISR(void)
+#elif defined(_GNUC_)
+void _attribute_ ((interrupt(USCIAB0TX_VECTOR))) USCI0TX_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+  UCA0TXBUF = results_to_send[Tx_index];
+  Tx_index++;
+  if (results_to_send[Tx_index -1] == '\n'){         // TX over?
+      Tx_index = 0;
+      strcpy(results_to_send, "");
+
+      IE2 &= ~UCA0TXIE;                       // Disable USCI_A0 TX interrupt
+      LPM0_EXIT;
+  }
+}
+ */
+

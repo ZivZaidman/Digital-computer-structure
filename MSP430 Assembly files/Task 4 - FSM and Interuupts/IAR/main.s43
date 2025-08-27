@@ -1,0 +1,51 @@
+#include  "bsp.h"
+
+             NAME   MAIN
+             PUBLIC state,main
+             EXTERN SysConfig,ClrLEDs,Double,DecLED,PWM,delay
+             EXTERN PrintLEDs,ReadSWs,PrintSWs2LEDs
+             
+;----------------------------------------------------------------------------------
+             ORG      DataSegStart         ; Begins a DATA segment
+             
+state        DW   0                        ; state variable
+
+;-------------------------------------------------------------------------------------          
+             ;RSEG    CSTACK    ; shows to compiler where is the RAM populating limit
+                                ; can be ignored
+;-------------------------------------------------------------------------------------
+             ORG     CodeSegStart       ; Program Reset = Begins a CODE segment
+           
+main         mov.w   #StackTosStart,SP  ; Initialize stack pointer to the RAM end 
+StopWDT      mov.w   #WDTPW+WDTHOLD,&WDTCTL    
+             mov     #0xFF,R6 ;count reg for DECled
+             mov     #1, R8 ;Count reg for Dilugim
+             call    #SysConfig
+             clr     state              ; set to idle state at the beginning
+
+;---------------------- FSM_loop -------------------------------------
+state0       cmp     #0x00,state         ;check if state0           
+             jnz     state1
+             bis.w   #CPUOFF+GIE,SR 
+
+state1       cmp     #0x01,state         ;check if state1
+             jnz     state2
+             DINT             
+             call    #DecLED         ;infinite function delete de,lay and fix all other delays and notes and delete print at state0
+             EINT
+            
+state2       cmp     #0x02,state         ;check if state2
+             jnz     state3  
+             DINT
+             call    #Double           ;infinite function
+             EINT
+            
+state3       cmp     #0x03,state         ;check if state2
+             jnz     state0  
+             DINT
+             call    #PWM           ;infinite function
+             EINT 
+             
+             jmp     state0       
+                 
+             END

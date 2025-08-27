@@ -1,0 +1,45 @@
+#include  "msp430g2553.h"
+;---------------------------------------------------------------
+                
+                MODULE    States
+                PUBLIC    ST05
+                EXTERN    Wait, ChangeDelay
+                RSEG      CODE
+                
+
+ST05            xor.b 0xFF,&P1OUT
+                call #Wait
+                dec R5
+                tst.b R5
+                jnz RETURN
+                call #ChangeDelay
+                mov #0x2710, R5
+RETURN          ret
+
+                ENDMOD 
+//==============================================================
+                MODULE  Others
+                PUBLIC  Wait, ChangeDelay
+                ORG     0C000h    
+a               DW 153
+b               DW 76
+                RSEG    CODE
+                
+
+Wait            mov.w   R6,R15              
+L1              dec.w   R15                     
+                jnz     L1                                    
+                ret            
+                                    
+                          
+ChangeDelay     cmp.b b,R6
+                jnz R6a
+                mov a, R6                
+                ret
+R6a             mov b, R6
+                ret
+
+
+                ENDMOD
+//=============================================================            
+                END

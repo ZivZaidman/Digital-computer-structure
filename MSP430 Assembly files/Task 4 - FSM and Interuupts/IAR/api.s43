@@ -1,0 +1,67 @@
+#include  "bsp.h"
+
+             MODULE API
+             PUBLIC Double,PWM,DecLED
+             EXTERN delay,state
+             
+             ORG      DataSegStart
+             
+             RSEG   CODE
+             
+;-------------------------------------------------------------
+;             Do dilugim counting 
+;-------------------------------------------------------------
+Double    clrc
+          mov #10, R7
+L1        mov.b R8,LEDsArrPort
+          push    #delay62_5ms
+          call    #delay
+          push    #delay62_5ms
+          call    #delay
+          push    #delay0_8_62_5ms
+          call    #delay        
+          RLA R8
+          cmp.b #2,state
+          JNZ return
+          bit.b #0x80,R8
+          jz CONT
+          mov #1,R8
+CONT      DEC R7
+          JNZ L1
+          mov #0,state
+return    ret
+;-------------------------------------------------------------
+;             LEDs Decrement counting
+;-------------------------------------------------------------
+DecLED      mov #20, R7
+L2          mov.b R6,LEDsArrPort
+            cmp.b #1, state
+            JNZ return2
+            push    #delay62_5ms
+            call    #delay
+            push    #delay62_5ms
+            call    #delay
+            push    #delay0_8_62_5ms
+            call    #delay
+            dec R6
+            dec R7
+            JNZ L2
+            mov #0,state
+return2     ret     
+;-------------------------------------------------------------
+;             PWM
+;-------------------------------------------------------------
+PWM         bic.b #0x80,PWMArrPort
+L3          cmp.b #3, state
+            JNZ return3
+            XOR.b   #0x80,PWMArrPort
+            push    #delay300us
+            call    #delay
+            XOR.b   #0x80,PWMArrPort
+            push    #delay100us
+            call    #delay            
+            jmp L3
+return3     ret   
+;-------------------------------------------------------------
+             ENDMOD    
+             END

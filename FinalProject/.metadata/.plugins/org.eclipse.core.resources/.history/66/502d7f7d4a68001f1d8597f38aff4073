@@ -1,0 +1,520 @@
+#include  "../header/api.h"         // private library - API layer
+#include  "../header/halGPIO.h"     // private library - HAL layer
+#include "stdio.h"
+
+enum Motorstate stepState;
+int angle=0;
+int32_t temp_division=0;
+unsigned int amount_of_steps =0;
+int CalibAngles=0;
+int clockDIR=0;
+char printarray[5]={0};
+char rotations[5]={0};
+char angles[5]={0};
+int prevP=0;
+int Vrx=0;
+int Vry=0;
+unsigned int iter=0;
+unsigned int iter2=0;
+int rotationscounterScript=0;
+int ScriptAngles=0;
+
+//-------------------calibrate stepmotor-----------------//
+void clibrateMotor(){
+    IE2 &= ~UCA0TXIE; // disable USCI_A0 TX interrupt to stop further transmissions
+    switch (stepState){
+    int j=0;
+    int i;
+      case Idlestep:
+
+          __bis_SR_register(LPM0_bits + GIE);       // wait for command from SW
+          break;
+      case Rotate:
+          rotationCounter=0;
+          while(rotateFlag){
+              rotationCounter++;
+              clockwiseRotation();
+              TIMERA0_delay_ms(1000);
+          }
+          break;
+      case StopRotate:
+          //=================send number of rotations======
+          for (j=0;j<5;j++){
+              rotations[j]=0;
+            }
+          inttochar(rotations, (int)rotationCounter);//int to char number of rotations
+
+          for (i=0;i<5;i++){            //send char number of rotaions
+              IE2 &= ~UCA0TXIE;
+              __bic_SR_register(GIE);
+              while (!(UCA0TXIFG)){
+                asm("nop");
+            }
+
+              UCA0TXBUF=(rotations[i]);
+              IE2 |= UCA0TXIE; // enable USCI_A0 TX interrupt to stop further transmissions
+              __bis_SR_register(LPM0_bits+GIE);
+          }
+          //=================send angle======
+          CalibAngles=divisionBy128(rotationCounter*90);//calculate angle from number of rotations
+          for (j=0;j<5;j++){
+                        angles[j]=0;
+          }                              //make sure that angles[5] is clear
+          inttochar (angles,CalibAngles);// int to char angles of rotations
+          for (i=0;i<5;i++){            //send char angles
+                IE2 &= ~UCA0TXIE;
+                __bic_SR_register(GIE);
+                while (!(UCA0TXIFG)){
+                  asm("nop");
+              }
+
+                UCA0TXBUF=(angles[i]);
+                IE2 |= UCA0TXIE; // enable USCI_A0 TX interrupt to stop further transmissions
+                __bis_SR_register(LPM0_bits+GIE);
+            }
+          prevP=0;
+          break;
+    }
+}
+//-------------------change angle according to joystick-----------------//
+void Joystickcontroledangle(){
+    TIMERA0_delay_ms(0xFFFF);
+    TIMERA0_delay_ms(0xFFFF);
+    TIMERA0_delay_ms(0xFFFF);
+    TIMERA0_delay_ms(0xFFFF);
+    MessurejoystickV ();//calcullates the position of X and Y
+
+    if(((Vy_Vx[1]>=400)&& (Vy_Vx[1]<=600) && (Vy_Vx[0]>=400) && (Vy_Vx[0]<=600))){
+        return;
+    }
+
+    int Vrx = -(Vy_Vx[1] - 512);
+    int Vry = -(Vy_Vx[0] - 512);
+    angle= tangens(Vry,Vrx);
+    amount_of_steps =divisionBy128(angle*182);//(angle*512)/360=Number of steps=~(angle*182)/128
+    if (amount_of_steps>=256){
+        amount_of_steps = 512-amount_of_steps;
+        clockDIR = 1;
+    }
+    int i;
+    for (i=0;i<amount_of_steps;i++){
+        if (clockDIR == 1){
+            counterclockwiseRotation();
+            TIMERA0_delay_ms(1000);
+        }else{
+            clockwiseRotation();
+            TIMERA0_delay_ms(1000);
+        }
+
+    }
+    clockDIR=0;
+    state=Idle;
+
+
+}
+//-------------------------------------------------------------
+//                JoyStickADC_Steppermotor
+//-------------------------------------------------------------
+void MessurejoystickV (){
+    ADC10CTL0 &= ~ENC;
+    while (ADC10CTL1 & ADC10BUSY);               // Wait if ADC10 core is active
+    ADC10SA = &Vy_Vx;                        // Data buffer start
+    ADC10CTL0 |= ENC + ADC10SC; // Sampling and conversion start
+    __bis_SR_register(LPM0_bits + GIE);        // LPM0, ADC10_ISR will force exit
+    ADC10CTL0 &= ~ENC;
+}
+//====================================================
+//===================painter state====================
+//=====================================================
+void joystick_painter(){
+    int i;
+    int j;
+    while(state == Painter){
+        MessurejoystickV();//calcullates the position of X and Y
+        if((Vy_Vx[1]>=400)&& (Vy_Vx[1]<=600) && (Vy_Vx[0]>=400) && (Vy_Vx[0]<=600)){
+            continue;
+        }
+        Vrx = -(Vy_Vx[1] - 512);
+        Vry = -(Vy_Vx[0] - 512);
+        if ((Vrx>=-50) && (Vrx<=50)){
+            Vrx=0;
+        }
+        if ((Vry>=-50) && (Vry<=50)){
+            Vry=0;
+        }
+        angle= tangens(Vry,Vrx);
+    //==================create char and send to PC===========
+
+            for (j=0;j<5;j++){
+                angles[j]=0;
+                }
+             inttochar(angles, (int)angle);//int to char number of rotations
+
+    //----------------------send REQ---------------------------------
+
+             IE2 &= ~UCA0TXIE;
+              __bic_SR_register(GIE);
+              while (!(UCA0TXIFG)){
+                asm("nop");
+
+              }
+              UCA0TXBUF = 0x11;
+              IE2 |= UCA0TXIE;
+              // enable USCI_A0 TX interrupt to stop further transmissions
+              __bis_SR_register(LPM0_bits+GIE);
+              //ackTimerA0_ms(1000);
+              while((ack==0) && (state==Painter)){
+                  __bis_SR_register(LPM0_bits+GIE);}                   //wait for ACK
+              //StopAllTimers();
+              ack=0;
+
+    //----------------------ACK recived-------------------------------
+             for (i=0;i<5;i++){            //send char angle
+                 TIMERA0_delay_ms(0x3F00);
+
+                 IE2 &= ~UCA0TXIE;
+                 __bic_SR_register(GIE);
+                 while (!(UCA0TXIFG)){
+                   asm("nop");
+               }
+
+                 UCA0TXBUF=(angles[i]);
+                 IE2 |= UCA0TXIE; // enable USCI_A0 TX interrupt to stop further transmissions
+                 __bis_SR_register(LPM0_bits+GIE);
+              }
+             TIMERA0_delay_ms(0xF00);
+
+       // }
+    }
+}
+/*void joystick_painter(){
+    while (state==Painter){
+        int i;
+        int j;
+        MessurejoystickV();//calcullates the position of X and Y
+        if((Vy_Vx[1]>=400)&& (Vy_Vx[1]<=600) && (Vy_Vx[0]>=400) && (Vy_Vx[0]<=600)){
+            continue;
+        }
+        Vrx = -(Vy_Vx[1] - 512);
+        Vry = -(Vy_Vx[0] - 512);
+        if ((Vrx>=-50) && (Vrx<=50)){
+            Vrx=0;
+        }
+        if ((Vry>=-50) && (Vry<=50)){
+            Vry=0;
+        }
+        angle= tangens(Vry,Vrx);
+        //==================create char and send to PC===========
+
+        for (j=0;j<5;j++){
+            angles[j]=0;
+            }
+         inttochar(angles, (int)angle);//int to char number of rotations
+
+
+
+    //----------------------send REQ---------------------------------
+
+         IE2 &= ~UCA0TXIE;
+          __bic_SR_register(GIE);
+          while (!(UCA0TXIFG)){
+            asm("nop");
+          }
+          UCA0TXBUF = 0x11;
+          IE2 |= UCA0TXIE; // enable USCI_A0 TX interrupt to stop further transmissions
+          __bis_SR_register(LPM0_bits+GIE); //wait for Tx for a wake up
+        if (ack==0){
+            __bis_SR_register(LPM0_bits+GIE);}                   //wait for Rx to wake us up wiht ACK
+    //----------------------ACK recived-------------------------------
+        if(ack==1){
+             for (i=0;i<5;i++){            //send char angle
+                 IE2 &= ~UCA0TXIE;
+                  __bic_SR_register(GIE);
+                  while (!(UCA0TXIFG)){
+                    asm("nop");
+                }
+
+                  UCA0TXBUF=(angles[i]);
+                  IE2 |= UCA0TXIE; // enable USCI_A0 TX interrupt to stop further transmissions
+                  __bis_SR_register(LPM0_bits+GIE);
+         //TIMERA0_delay_ms(0xF00);
+             }
+        }
+    }
+}
+*/
+
+//===============int to str====================================
+void inttochar (char A[5] ,int x){
+    int i=0;
+    int num;
+    int base=10000;
+    while (i<5){
+        if (num<base && i==0){
+            base=1000;
+            i++;
+        }else if (num<base && i==1){
+            base=100;
+            i++;
+        }else if (num<base && i==2){
+            base=10;
+            i++;
+        }else if (num<base && i==3){
+            base=1;
+            i++;
+        }else if (num<base && i==4){
+            i++;
+        }
+        while (num>base-1){
+            num-=base;
+            A[i]++;
+        }
+    }
+}
+uint32_t hex_to_int(char *hex) {
+    uint32_t val = 0;
+    int o;
+    for(o=0; o<2; o++) {
+        // get current character then increment
+        uint8_t byte = *hex++;
+        // transform hex character to the 4bit equivalent number, using the ascii table indexes
+        if (byte >= '0' && byte <= '9') byte = byte - '0';
+        else if (byte >= 'a' && byte <='f') byte = byte - 'a' + 10;
+        else if (byte >= 'A' && byte <='F') byte = byte - 'A' + 10;
+        // shift 4 to make space for new digit, and add the 4 bits of the new digit
+        val = (val << 4) | (byte & 0xF);
+    }
+    return val;
+}
+//--------------------------------------------------------------
+//              Script Functions
+//--------------------------------------------------------------
+void Script_mode(){
+    while (state==Script){
+        if (file_uploaded_ind==1){
+            file_uploaded_ind=0;
+            write_data_to_flash();
+            //=========send ACK=========
+            IE2 &= ~UCA0TXIE;
+            __bic_SR_register(GIE);
+            while (!(UCA0TXIFG)){
+               asm("nop");
+
+            }
+            UCA0TXBUF = 0x22;
+            IE2 |= UCA0TXIE;
+            // enable USCI_A0 TX interrupt to stop further transmissions
+            __bis_SR_register(LPM0_bits+GIE);
+            //=== ACK sent ==========
+        }
+        if (file_execute_ind==1){
+            file_execute_ind=0;
+            execute_scripts();
+            //execute_pointer
+
+        }
+    }
+}
+//======== execute order 66 ===================================
+void execute_scripts(){
+    int i=0;
+    while (i<0x40 && state==Script){
+        unsigned int command = (*execute_pointer << 8) | *(execute_pointer + 1);
+        iter = hex_to_int((execute_pointer+2));
+        iter2 = hex_to_int((execute_pointer+4));
+        switch (command){
+            case '01':
+                inc_lcd(iter);
+                execute_pointer+=4;
+                i+=4;
+                break;
+            case '02':
+                dec_lcd(iter);
+                execute_pointer+=4;
+                i+=4;
+                break;
+            case '03':
+                rra_lcd(iter);
+                execute_pointer+=4;
+                i+=4;
+                break;
+            case '04':
+                set_delay(iter);
+                execute_pointer+=4;
+                i+=4;
+                break;
+            case '05':
+                clear_all_leds();
+                execute_pointer+=2;
+                i+=2;
+                break;
+            case '06':
+                stepper_deg(iter);
+                execute_pointer+=4;
+                i+=4;
+                break;
+            case '07':
+                stepper_scan(iter,iter2);
+                execute_pointer+=6;
+                i+=6;
+                break;
+            case '08':
+                sleep();
+                execute_pointer+=2;
+                i+=2;
+                reset_delay();
+                break;
+            default:
+                execute_pointer+=2;
+                i+=2;
+                break;
+        }
+    }
+
+}
+//=================== delay for script============================
+void script_delay(){
+    int temp1=d;
+    while (temp1>50){
+        TIMERA0_delay_ms(0xffff);
+        temp1-=50;
+    }
+    if (temp1>0){
+        TIMERA0_delay_ms(temp1);
+    }
+}
+//===============increase LCD count============================
+void inc_lcd(int x){
+    int i;
+    int j;
+
+    for (i=0;i<=x;i++){
+        for (j=0;j<5;j++){
+            printarray[j]=0x30;
+        }
+        inttochar(printarray,i);
+        lcd_puts(printarray,5);
+        script_delay();
+        lcd_cmd(0x01);
+    }
+
+}
+//===============decrease LCD count============================
+void dec_lcd(int x){
+    int i;
+    int j;
+
+    for (i=x;i>=0;i--){
+        for (j=0;j<5;j++){
+            printarray[j]=0x30;
+        }
+        inttochar(printarray,i);
+        lcd_puts(printarray,5);
+        script_delay();
+        lcd_cmd(0x01);
+    }
+
+}
+//===============Right rotate LCD============================
+
+void rra_lcd (char x){// lcd_cursor_right(), lcd_new_line(), lcd_data(x)
+    int i;
+    int j;
+    for (i=0;i<32;i++){
+        lcd_clear();
+        if (i>15){
+            lcd_cursor_16(i-16);
+        }
+        else{
+            lcd_cursor(i);
+        }
+        lcd_data(x);
+        script_delay();
+    }
+    lcd_clear();
+}
+//=============set & reset delay=====================//
+void set_delay(int x){
+    d=x;
+}
+
+void reset_delay(){
+    d=50;
+}
+/*
+ *
+ */
+//==========Move Pointer X degrees=========//
+void stepper_deg(int p){
+    int temp=p;
+    p=p-prevP;
+    if (p<0){p=360+p;}
+    amount_of_steps =divisionBy128(p*182);//(p angle*512)/360=Number of steps=~(angle*182)/128
+        if (amount_of_steps>=256){
+            amount_of_steps = 512-amount_of_steps;
+            clockDIR = 1;
+        }
+        int i;
+        for (i=0;i<amount_of_steps;i++){
+            if (clockDIR == 1){
+                counterclockwiseRotation();
+                TIMERA0_delay_ms(1000);
+            }else{
+                clockwiseRotation();
+                TIMERA0_delay_ms(1000);
+            }
+            rotationscounterScript+=1;
+            ScriptAngles=divisionBy128(rotationCounterScript*90);//calculate angle from number of rotations
+            inttochar(angels,ScriptAngles);
+            while (!(UCA0TXIFG)){}
+            /*
+             *  for (i=0;i<5;i++){            //send char angle
+                 TIMERA0_delay_ms(0x3F00);
+
+                 IE2 &= ~UCA0TXIE;
+                 __bic_SR_register(GIE);
+                 while (!(UCA0TXIFG)){
+                   asm("nop");
+               }
+
+                 UCA0TXBUF=(angles[i]);
+                 IE2 |= UCA0TXIE; // enable USCI_A0 TX interrupt to stop further transmissions
+                 __bis_SR_register(LPM0_bits+GIE);
+              }
+             TIMERA0_delay_ms(0xF00);
+             *
+             * rotationscounterScript
+             */
+
+        }
+        clockDIR=0;
+        prevP=temp;
+
+}
+//=============== Scan L to R =====================
+void stepper_scan(int L, int R){
+    prevP=0;
+    int dif=R-L;
+    char L1[5]={0X30,0X30,0X30,0X30,0X30};
+    char R1[5]={0X30,0X30,0X30,0X30,0X30};
+    stepper_deg(L);
+    TIMERA0_delay_ms(0xFFFF);
+    TIMERA0_delay_ms(0xFFFF);
+    stepper_deg(R);
+    inttochar(R1,R);
+    inttochar(L1,L);
+    lcd_puts("Left deg: ",10);
+    lcd_puts(L1,5);
+    lcd_new_line;
+    lcd_puts("right deg: ",11);
+    lcd_puts(R1,5);
+}
+//================= Sleep =========================
+void sleep (){
+    __bis_SR_register(LPM0_bits + GIE);       // wait for command from SW
+}
+//================== Clear LCD ====================
+void clear_all_leds(){
+    lcd_clear();
+
+}

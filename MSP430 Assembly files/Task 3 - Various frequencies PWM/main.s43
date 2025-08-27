@@ -1,0 +1,32 @@
+#include  "msp430g2553.h"
+;-------------------------------------------------------------------------------          
+           NAME    Main
+           PUBLIC  Main
+           EXTERN  ST05
+
+           RSEG    CSTACK                  
+           RSEG    CODE                    
+Main       mov.w   #SFE(CSTACK),SP          ; Initialize stackpointer
+StopWDT    mov.w   #WDTPW+WDTHOLD,&WDTCTL  ; Stop WDT = #WDTPW+WDTHOLD -->M(&WDTCTL)  when #WDTPW+WDTHOLD it is constant number as #0x49+0x57
+SetUpP1    bic.b #0xFF,&P1SEL
+           bis.b #0xFF,&P1DIR
+SetUpP2    bic.b #0xFF,&P2SEL
+           bic.b #0xFF,&P2DIR
+           mov #153,R6
+swState    mov.b &P2IN,R4
+           cmp #0x35,R4
+           JNZ notfive
+           CALL #ST05
+           jmp swState
+notfive    clr.b &P1OUT
+           mov #0x2710, R5 
+           jmp swState           
+           
+L          nop              
+           jmp     L
+;*******************************************************************************
+           COMMON  INTVEC  ;Interrupt Vectors-Begins a common segment INTVEC 
+;*******************************************************************************
+           ORG     RESET_VECTOR   ; MSP430 RESET Vector
+           DW      Main                   
+           END     

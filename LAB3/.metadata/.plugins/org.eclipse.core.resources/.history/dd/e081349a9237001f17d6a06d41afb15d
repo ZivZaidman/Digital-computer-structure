@@ -1,0 +1,62 @@
+#include  "../header/api.h"         // private library - API layer
+#include  "../header/app.h"         // private library - APP layer
+
+enum FSMstate state;
+enum SYSmode lpm_mode;
+unsigned int KB;
+int KA;
+/*int M=10;
+int N=37;*/
+char data_matrix[10][38] = {"An apple a day keeps the doctor away ",
+                            "climb on the bandwagon ",
+                            "Dot the i's and cross the t's ",
+                            "He who pays the piper calls the tune ",
+                            "The pen is mightier than the sword ",
+                            "The pot calling the kettle black ",
+                            "shed crocodile tears ",
+                            "Close but no cigar ",
+                            "Cut from the same cloth ",
+                            "Strike while the iron’s hot "};
+char idiom_recorder[32]={1,2,3,4,5,6,7,8,9};
+char strMerge[76]={0};
+int KBprev;
+int KeypadCounterPrev;
+void main(void){
+
+  state = state0;  // start in idle state on RESET
+  lpm_mode = mode0;     // start in idle state on RESET
+  sysConfig();
+  lcd_init();
+  lcd_clear();
+
+/*  int j=0;
+  for (int j = 0; j < 74; j++) {
+      strMerge[j] = 0x20;
+  }*/
+
+  while(1){
+    switch(state){
+      case state0: //idle
+          enterLPM(mode0);
+          break;
+
+      case state1:
+          state1Func();
+          break;
+
+      case state2:
+          state2Func();
+          break;
+
+      case state3://ADC converter
+          DMA1config();
+          state3Func();
+          break;
+
+      case state4:
+           state4Func();
+      	break;
+    }
+  }
+}
+

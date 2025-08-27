@@ -1,0 +1,49 @@
+#include  "api.h"         // private library - API layer
+#include  "app.h"         // private library - APP layer
+
+enum FSMstate state;
+enum SYSmode lpm_mode;
+int  seconds0 = 0x30;
+int  seconds1 = 0x30;
+int  minutes0 = 0x30;
+int  minutes1 = 0x30;
+
+void main(void){
+
+  state = state0;  // start in idle state on RESET
+  lpm_mode = mode0;     // start in idle state on RESET
+  sysConfig();
+  lcd_init();
+  lcd_clear();
+
+
+  while(1){
+    switch(state){
+      case state0: //idle
+          enterLPM(mode0);
+          break;
+      case state1:
+          lcd_cmd(0x01);
+          enable_interrupts();        
+          state1Func();
+          break;
+      case state2://Seconds Counter
+          state1TimerOff();
+          lcd_cmd(0x01); //clear_LCD
+          enable_interrupts();
+          state2Func();
+          break;
+      case state3://ADC converter
+          state1TimerOff();
+          lcd_cmd(0x01); //Return courser to start
+          enable_interrupts();
+          state3Func();
+          break;
+      case state4:
+          state1TimerOff();
+          lcd_cmd(0x01); //Return courser to start
+          state4Func();
+    }
+  }
+}
+

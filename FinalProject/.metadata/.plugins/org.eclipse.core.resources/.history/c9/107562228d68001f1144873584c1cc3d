@@ -1,0 +1,60 @@
+#include "../header/flash.h"  // Include the header for memory management functions (private library)
+#include "../header/halGPIO.h"         // Include the header for GPIO hardware abstraction layer (private library)
+#include "string.h"                    // Include the standard string library for string manipulation functions
+
+MemoryFiles memoryFiles;  // Define a global variable `memoryFiles` of type `MemoryFiles` to manage file operations
+
+void update_current_file_size(void)
+{
+    // Function to update the size of the most recently added file in the `memoryFiles` structure
+    memoryFiles.file_sizes[memoryFiles.total_files - 1] = strlen(Rec_data) - 1;
+}
+
+
+void write_data_to_flash(void)
+{
+    // Function to write received data to flash memory
+    char *flash_ptr;     // Pointer to the flash memory location where data will be written
+    int i;
+    if (state==Script){
+        flash_ptr = memoryFiles.file_pointers[memoryFiles.total_files - 1];  // Initialize pointer to the last file's flash memory location
+
+        // Prepare to erase the flash memory segment before writing
+        FCTL1 = FWKEY + ERASE;
+        FCTL3 = FWKEY;
+
+        // Erase the flash memory segment
+        *flash_ptr = 0;
+        FCTL1 = FWKEY + WRT;  // Enable write mode to flash memory
+
+        for (i = 0; i < memoryFiles.file_sizes[memoryFiles.total_files - 1]; i++)
+        {
+            // Skip newline (0x0A) and carriage return (0x0D) characters
+            if (Rec_data[i] == 0x0A || Rec_data[i] == 0x0D) {
+                continue;
+            }
+            // Write data to flash memory and advance the pointer
+            *flash_ptr++ = Rec_data[i];
+        }
+
+        memset(input, 0, strlen(input));  // Clear the receive buffer after writing
+
+        FCTL1 = FWKEY;           // Disable writing to flash memory
+        FCTL3 = FWKEY + LOCK;    // Lock the flash memory
+    }
+    else if(state==calibration){
+            flash_ptr=0x1200;
+    // Prepare to erase the flash memory segment before writing
+            FCTL1 = FWKEY + ERASE;
+            FCTL3 = FWKEY;
+
+            // Erase the flash memory segment
+            *flash_ptr = 0;
+            FCTL1 = FWKEY + WRT;  // Enable write mode to flash memory
+            *flash_ptr++=rotationCounter;
+            *flash_ptr++=CalibAngles;
+            FCTL1 = FWKEY;           // Disable writing to flash memory
+            FCTL3 = FWKEY + LOCK;    // Lock the flash memory
+
+        }
+}
