@@ -1,1 +1,0 @@
-"./api.obj" "./bsp.obj" "./halGPIO.obj" "./main.obj" "../lnk_msp430fg4616.cmd" -llibc.a 
