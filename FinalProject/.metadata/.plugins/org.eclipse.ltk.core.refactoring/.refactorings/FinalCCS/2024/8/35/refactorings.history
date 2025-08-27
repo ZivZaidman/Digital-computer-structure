@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;FinalCCS/Header/flash&apos; to &apos;flash.h&apos;" description="Rename resource &apos;flash&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Header/flash" name="flash.h" stamp="1725100219469" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;FinalCCS/Source/flash&apos; to &apos;flash.c&apos;" description="Rename resource &apos;flash&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Source/flash" name="flash.c" stamp="1725100224795" updateReferences="true"/>
-</session>
